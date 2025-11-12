@@ -1,5 +1,4 @@
-/*using HarmonyLib;
-using RimWorld;
+using HarmonyLib;
 using Verse;
 
 namespace RT_Saltwater;
@@ -12,4 +11,4 @@ public class HarmonyBootstrap
         var harmony = new Harmony("com.royallytipsy.saltwater");
         harmony.PatchAll();
     }
-}*/
+}

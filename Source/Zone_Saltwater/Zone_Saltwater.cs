@@ -13,7 +13,7 @@ public class Zone_Saltwater : Zone_Growing
     public Zone_Saltwater(ZoneManager zoneManager)
         : base(zoneManager)
     {
-        label = "RTMerrenPatches_SaltwaterZone".Translate();
+        label = "RT_Saltwater_SaltwaterZone".Translate();
         if (ModsConfig.IsActive("Arquebus.StagzMerfolk") && DefDatabase<ThingDef>.GetNamed("Stagz_DarkAlgae") != null)
         { 
             SetPlantDefToGrow(DefDatabase<ThingDef>.GetNamed("Stagz_DarkAlgae"));

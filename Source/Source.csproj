@@ -18,7 +18,7 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DebugSymbols>false</DebugSymbols>
         <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
+        <Optimize>true</Optimize>
         <OutputPath>..\1.6\Assemblies</OutputPath>
         <DefineConstants>DEBUG;TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
@@ -53,7 +53,6 @@
       <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633" />
       <PackageReference Include="Lib.Harmony" Version="2.4.1">
         <ExcludeAssets>runtime</ExcludeAssets>
-        <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>

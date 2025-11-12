@@ -6,12 +6,12 @@ namespace RT_Saltwater;
 
 public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
 {
-    protected override string NewZoneLabel => "RTMerrenPatches_SaltwaterZone".Translate();
+    protected override string NewZoneLabel => "RT_Saltwater_SaltwaterZone".Translate();
     public Designator_ZoneAdd_Saltwater()
     {
         zoneTypeToPlace = typeof(Zone_Saltwater);
-        defaultLabel = "RTMerrenPatches_SaltwaterZone".Translate();
-        defaultDesc = "RTMerrenPatches_SaltwaterZone_description".Translate();
+        defaultLabel = "RT_Saltwater_SaltwaterZone".Translate();
+        defaultDesc = "RT_Saltwater_SaltwaterZone_description".Translate();
         icon = ContentFinder<Texture2D>.Get("UI/Designators/ZoneCreate_Growing");
         tutorTag = "ZoneAdd_Growing";
     }
