@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <!--Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd">
         <xpath>/Defs/DesignationCategoryDef[defName = "Zone"]/specialDesignatorClasses</xpath>
         <value>
             <li>RT_Saltwater.Designator_ZoneAdd_Saltwater</li>
         </value>
-    </Operation-->
+    </Operation>
     
     <Operation Class="PatchOperationAttributeRemove">
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]</xpath>
@@ -19,7 +19,7 @@
         </value>
     </Operation>
 
-    <!--Operation Class="PatchOperationAttributeRemove">
+    <Operation Class="PatchOperationAttributeRemove">
         <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
     </Operation>    
@@ -34,5 +34,5 @@
     <Operation Class="PatchOperationAttributeRemove">
         <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
-    </Operation-->
+    </Operation>
 </Patch>

@@ -24,7 +24,4 @@ public class Zone_Saltwater : Zone_Growing
     {
         yield return DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Saltwater_Expand>();
     }
-    
-    //Want to implement colors. From base:
-    //protected override Color NextZoneColor => ZoneColorUtility.NextGrowingZoneColor();
 }

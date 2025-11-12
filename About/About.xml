@@ -14,9 +14,6 @@
             <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
             <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
         </li>
-        <li>
-            <packageId>Arquebus.StagzMerfolk</packageId>
-        </li>
     </modDependencies>
     <loadAfter>
         <li>Ludeon.RimWorld</li>

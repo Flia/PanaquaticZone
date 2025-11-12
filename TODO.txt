@@ -1,0 +1,6 @@
+Ideas:
+- cypress trees and other odyssey water plants
+- setting for disallowing saltwater
+- maybe disallow in polluted water, and another setting check for that
+- colors. From base: "protected override Color NextZoneColor => ZoneColorUtility.NextGrowingZoneColor();"
+- need to figure out how to check if StagzMerfolk is loaded for xml patching
