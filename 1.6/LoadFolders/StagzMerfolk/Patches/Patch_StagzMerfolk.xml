@@ -4,22 +4,10 @@
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]</xpath>
         <attribute>MayRequire</attribute>
     </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]/plant/sowTags</xpath>
-        <value>
-            <li>RT_Saltwater</li>
-        </value>
-    </Operation>
 
     <Operation Class="PatchOperationAttributeRemove">
         <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
-    </Operation>    
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]/plant/sowTags</xpath>
-        <value>
-            <li>RT_Saltwater</li>
-        </value>
     </Operation>
     
     <Operation Class="PatchOperationAttributeRemove">

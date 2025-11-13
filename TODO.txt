@@ -1,10 +1,13 @@
 Issue tracker:
-- cypress patch doesn't work. Looks like the sowTags don't exist at the time of patching, only after inheriting
+- cypress patch STILL doesn't work. it's just never sown. May be vanilla problem actually
+- languages strings are nonsense in current context of this mod
 
 Ideas:
 - other odyssey water plants?
 - setting for disallowing saltwater
-- maybe disallow in polluted water, and another setting check for that
 - colors. From base: "protected override Color NextZoneColor => ZoneColorUtility.NextGrowingZoneColor();"
-- need to figure out how to check if StagzMerfolk is loaded for xml patching
 - check if IsWater won't trigger on SomeThingsFloat (or was it different mod) space tiles
+- pollution interaction is wonky. Check again if all plants grow in pollution, fix if they do,
+and do something about selection of plants when growing zone only covers polluted water
+- remove other mods' gizmos
+- icon tho
