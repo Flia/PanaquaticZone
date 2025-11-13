@@ -20,5 +20,7 @@
         <li>Ludeon.RimWorld.Odyssey</li>
         <li>brrainz.harmony</li>
         <li>Arquebus.StagzMerfolk</li>
+        <li>VanillaExpanded.VPlantsEMore</li>
+        <li>LimeTreeSnake.Biosphere</li>
     </loadAfter>
 </ModMetaData>

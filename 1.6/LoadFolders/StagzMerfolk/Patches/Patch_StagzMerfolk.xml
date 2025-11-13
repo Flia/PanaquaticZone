@@ -8,7 +8,6 @@
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]/plant/sowTags</xpath>
         <value>
             <li>RT_Saltwater</li>
-            <li MayRequire="LimeTreeSnake.Biosphere">Water</li>
         </value>
     </Operation>
 
@@ -20,7 +19,6 @@
         <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]/plant/sowTags</xpath>
         <value>
             <li>RT_Saltwater</li>
-            <li MayRequire="LimeTreeSnake.Biosphere">Water</li>
         </value>
     </Operation>
     

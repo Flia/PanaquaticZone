@@ -1,5 +1,5 @@
 Issue tracker:
-
+- cypress patch doesn't work. Looks like the sowTags don't exist at the time of patching, only after inheriting
 
 Ideas:
 - other odyssey water plants?
