@@ -1,12 +1,12 @@
 Issue tracker:
-- cypress patch STILL doesn't work. it's just never sown. May be vanilla problem actually
+- cypress patch STILL doesn't work. it's just never sown. May be vanilla problem actually - check without any mods
 - languages strings are nonsense in current context of this mod
-
+- made new icon but it looks messed up in the game smh.
+ - maybe should be using lotus for it anyhow, it's vanilla sprite
+ 
 Ideas:
 - other odyssey water plants?
 - colors. From base: "protected override Color NextZoneColor => ZoneColorUtility.NextGrowingZoneColor();"
 - check if IsWater won't trigger on SomeThingsFloat (or was it different mod) space tiles
 - pollution interaction is wonky. Check again if all plants grow in pollution, fix if they do,
 and do something about selection of plants when growing zone only covers polluted water
-- remove other mods' gizmos
-- icon tho

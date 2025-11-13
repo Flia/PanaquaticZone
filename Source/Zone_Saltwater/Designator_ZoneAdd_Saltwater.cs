@@ -12,7 +12,7 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
         zoneTypeToPlace = typeof(Zone_Saltwater);
         defaultLabel = "RT_Saltwater_SaltwaterZone".Translate();
         defaultDesc = "RT_Saltwater_SaltwaterZone_description".Translate();
-        icon = ContentFinder<Texture2D>.Get("UI/Designators/ZoneCreate_Growing");
+        icon = ContentFinder<Texture2D>.Get("UI/Designators/ZoneCreate_RT_Saltwater");
         tutorTag = "ZoneAdd_Growing";
     }
     protected override Zone MakeNewZone()
