@@ -24,5 +24,6 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
     public override AcceptanceReport CanDesignateCell(IntVec3 c)
     {
         return base.CanDesignateCell(c).Accepted && c.GetTerrain(Map).IsWater;
+        // to exclude ocean: c.GetTerrain(Map).IsOcean. There's also IsRiver
     }
 }
