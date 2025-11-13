@@ -5,7 +5,21 @@ Issue tracker:
  - maybe should be using lotus for it anyhow, it's vanilla sprite
  
 Ideas:
-- other odyssey water plants?
+- other odyssey water plants? Plant_Reeds, Plant_LilyPad, Plant_Bulrush
 - check if IsWater won't trigger on SomeThingsFloat (or was it different mod) space tiles
 - pollution interaction is wonky. Check again if all plants grow in pollution, fix if they do,
 and do something about selection of plants when growing zone only covers polluted water
+- figure out how to hide the gizmo when plant defs for it are empty
+
+New algae type:
+Irish moss, sargassum, Eucheuma/sea moss/guso
+Porphyra might be nice as edible weed for salt. Quackweed/duckweed is freshwater irl
+Nori farms are a reference
+Gorgeia: The origin of coral is explained in Greek mythology by the story of Perseus. Having petrified Cetus, the sea monster threatening Andromeda, Perseus placed Medusa's head on the riverbank while he washed his hands. When he recovered her head, he saw that her blood had turned the seaweed (in some variants the reeds) into red coral. Thus, the Greek word for coral is 'Gorgeia', as Medusa was one of the three Gorgons.
+https://aquariumwhisperer.com/types-of-ocean-plants/ "coraline"
+
+"Not a true coral, but a type of coralline alga. Its calcified skeleton allows it to survive on land."
+coralline rose
+
+contrastinc colors. Red/teal, red/white, pink/orange, purple/cyan, magenta/ochre
+
