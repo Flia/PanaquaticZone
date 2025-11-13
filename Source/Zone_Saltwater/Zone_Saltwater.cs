@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace RT_Saltwater;
 
 public class Zone_Saltwater : Zone_Growing
 {
+    protected override Color NextZoneColor => SaltwaterZoneColorUtility.NextSaltwaterZoneColor();
+    
     public Zone_Saltwater() //I really wish I knew why this empty constructor is needed
     {
     }

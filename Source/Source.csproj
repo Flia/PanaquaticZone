@@ -60,6 +60,7 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Zone_Saltwater\Designator_ZoneAdd_Saltwater.cs" />
         <Compile Include="Zone_Saltwater\Designator_ZoneAdd_Saltwater_Expand.cs" />
+        <Compile Include="Zone_Saltwater\SaltwaterZoneColorUtility.cs" />
         <Compile Include="Zone_Saltwater\Zone_Saltwater.cs" />
     </ItemGroup>
     <ItemGroup>
