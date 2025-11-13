@@ -4,7 +4,6 @@ Issue tracker:
 
 Ideas:
 - other odyssey water plants?
-- setting for disallowing saltwater
 - colors. From base: "protected override Color NextZoneColor => ZoneColorUtility.NextGrowingZoneColor();"
 - check if IsWater won't trigger on SomeThingsFloat (or was it different mod) space tiles
 - pollution interaction is wonky. Check again if all plants grow in pollution, fix if they do,

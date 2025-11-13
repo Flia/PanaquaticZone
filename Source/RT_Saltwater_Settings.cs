@@ -1,25 +1,23 @@
-/*using UnityEngine;
+using UnityEngine;
 using Verse;
 
 namespace RT_Saltwater;
 
 public class RT_Saltwater_Settings : ModSettings
 {
-    public static bool ExampleSetting = true;
+    public static bool NoSalt = false;
     
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref ExampleSetting, "ExampleSetting");
+        Scribe_Values.Look(ref NoSalt, "NoSaltSetting");
         base.ExposeData();
     }
 
     public void DoSettingsWindowContents(Rect inRect)
     {
-        string ExampleSetting_Label = "Fish_ExampleSettingLabel".Translate();
-        string ExampleSetting_Tooltip = "Fish_CosmeticGenesTooltip".Translate();
         Listing_Standard listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
-        listingStandard.CheckboxLabeled(ExampleSetting_Label, ref ExampleSetting, ExampleSetting_Tooltip);
+        listingStandard.CheckboxLabeled("RT_Saltwater_NoSaltLabel".Translate(), ref NoSalt, "RT_Saltwater_NoSaltTooltip".Translate());
         listingStandard.End();
     }
-}*/
+}

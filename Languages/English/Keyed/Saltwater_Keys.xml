@@ -3,4 +3,6 @@
     <RT_Saltwater_SaltwaterZone>Saltwater zone</RT_Saltwater_SaltwaterZone>
     <RT_Saltwater_SaltwaterZone_description>Allows to grow Merren specialties of fibrekelp and quackweed. They are hardy enough to grow in saltwater.</RT_Saltwater_SaltwaterZone_description>
     <RT_Saltwater_Settings>royallyTipsy's Saltwater Growing Zone</RT_Saltwater_Settings>
+    <RT_Saltwater_NoSaltLabel>Disallows the zone from ocean tiles</RT_Saltwater_NoSaltLabel>
+    <RT_Saltwater_NoSaltTooltip>No idea how well ocean water is tagged in other mods. So may not always work.</RT_Saltwater_NoSaltTooltip>
 </LanguageData>
