@@ -5,7 +5,7 @@ namespace RT_Saltwater;
 
 public class RT_Saltwater : Mod
 {
-    RT_Saltwater_Settings settings;
+    private readonly RT_Saltwater_Settings settings;
 
     public RT_Saltwater(ModContentPack content) : base(content)
     {
@@ -15,7 +15,7 @@ public class RT_Saltwater : Mod
     public override void DoSettingsWindowContents(Rect inRect)
     {
         base.DoSettingsWindowContents(inRect);
-        settings.DoSettingsWindowContents(inRect);
+        RT_Saltwater_Settings.DoSettingsWindowContents(inRect);
     }
 
     public override string SettingsCategory()

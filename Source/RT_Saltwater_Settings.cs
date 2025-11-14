@@ -13,9 +13,9 @@ public class RT_Saltwater_Settings : ModSettings
         base.ExposeData();
     }
 
-    public void DoSettingsWindowContents(Rect inRect)
+    public static void DoSettingsWindowContents(Rect inRect)
     {
-        Listing_Standard listingStandard = new Listing_Standard();
+        var listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
         listingStandard.CheckboxLabeled("RT_Saltwater_NoSaltLabel".Translate(), ref NoSalt, "RT_Saltwater_NoSaltTooltip".Translate());
         listingStandard.End();

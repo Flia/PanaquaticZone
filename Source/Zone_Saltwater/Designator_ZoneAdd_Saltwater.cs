@@ -23,8 +23,16 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
 
     public override AcceptanceReport CanDesignateCell(IntVec3 c)
     {
+        if (!base.CanDesignateCell(c).Accepted || 
+            c.GetTerrain(Map).passability != Traversability.Standable || 
+            !c.GetTerrain(Map).IsWater)
+        {
+           return false;
+        }
         if (RT_Saltwater_Settings.NoSalt)
-            return base.CanDesignateCell(c).Accepted && c.GetTerrain(Map).IsWater && !c.GetTerrain(Map).IsOcean;
-        return base.CanDesignateCell(c).Accepted && c.GetTerrain(Map).IsWater;
+        {
+            return c.GetWaterBodyType(Map) == WaterBodyType.Freshwater;
+        }
+        return true;
     }
 }

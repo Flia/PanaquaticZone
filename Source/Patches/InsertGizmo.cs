@@ -1,4 +1,4 @@
-using RimWorld;
+/*using RimWorld;
 using Verse;
 
 namespace RT_Saltwater;
@@ -8,8 +8,11 @@ public class InsertGizmo
 {
     static InsertGizmo()
     {
-        /*var i = DesignationCategoryDefOf.Zone.specialDesignatorClasses.IndexOf(typeof(Designator_ZoneAdd_Growing));
+        var i = DesignationCategoryDefOf.Zone.specialDesignatorClasses.IndexOf(typeof(Designator_ZoneAdd_Growing));
         DesignationCategoryDefOf.Zone.specialDesignatorClasses.Add(typeof(Designator_ZoneAdd_Saltwater));
-        Log.Message(i + " success?");*/
+        foreach (var designator in DesignationCategoryDefOf.Zone.specialDesignatorClasses)
+        {
+            Log.Message(designator.ToString());
+        }
     }
-}
+}*/

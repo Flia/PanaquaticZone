@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="PlantBaseNonEdible">
+        <defName>RT_Swiftcoral</defName>
+        <label>swiftcoral</label>
+        <description>A genetically-engineered coral which grows very fast. It is a renewable source of limestone, useful for colonies with little land but a lot of water.</description>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Flammability>0</Flammability>
+        </statBases>
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <graphicData>
+            <texPath>Things/Plant/Swiftcoral</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+        <plant>
+            <pollution>Any</pollution>
+            <completelyIgnoreFertility>true</completelyIgnoreFertility>
+            <growDays>2</growDays>
+            <harvestWork>800</harvestWork>
+            <lifespanDaysPerGrowDays>9</lifespanDaysPerGrowDays>
+            <harvestedThingDef>ChunkLimestone</harvestedThingDef>
+            <harvestYield>1</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <purpose>Misc</purpose>
+            <neverBlightable>true</neverBlightable>
+            <blockAdjacentSow>true</blockAdjacentSow>
+            <sowTags>
+                <li>RT_Saltwater</li>
+            </sowTags>
+        </plant>
+    </ThingDef>
+</Defs>
