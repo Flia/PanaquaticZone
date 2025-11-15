@@ -11,12 +11,9 @@ public static class HarmonyPatch_SaltwaterZonePlants
     {
         if (obj is not Zone_Saltwater saltwater) return result;
         if (!PollutionUtility.CanPlantAt(plantDef, saltwater)) return result;
-        if (SaltwaterUtility.CanPlantAt(plantDef, saltwater))
-        {
-            return plantDef.plant.sowTags.Contains("RT_Saltwater") ||
-                 plantDef.plant.sowTags.Contains("VCE_Aquatic") ||
-                 plantDef.plant.sowTags.Contains("Water");  
-        }
-        return result;
+        if (!SaltwaterUtility.CanPlantAt(plantDef, saltwater)) return result; 
+        return plantDef.plant.sowTags.Contains("RT_Saltwater") || 
+               plantDef.plant.sowTags.Contains("VCE_Aquatic") ||
+               plantDef.plant.sowTags.Contains("Water");
     }
 }

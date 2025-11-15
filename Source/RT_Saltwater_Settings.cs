@@ -5,11 +5,13 @@ namespace RT_Saltwater;
 
 public class RT_Saltwater_Settings : ModSettings
 {
-    public static bool NoSalt = false;
+    public static bool MarineAgriculture = true;
+    public static bool IndustrialRunoffToo = false;
     
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref NoSalt, "NoSaltSetting");
+        Scribe_Values.Look(ref MarineAgriculture, "MarineAgricultureSetting");
+        Scribe_Values.Look(ref IndustrialRunoffToo, "IndustrialRunoffToo");
         base.ExposeData();
     }
 
@@ -17,7 +19,8 @@ public class RT_Saltwater_Settings : ModSettings
     {
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
-        listingStandard.CheckboxLabeled("RT_Saltwater_NoSaltLabel".Translate(), ref NoSalt, "RT_Saltwater_NoSaltTooltip".Translate());
+        listingStandard.CheckboxLabeled("RT_Saltwater_MarineAgricultureLabel".Translate(), ref MarineAgriculture, "RT_Saltwater_MarineAgricultureTooltip".Translate());
+        listingStandard.CheckboxLabeled("RT_Saltwater_IndustrialRunoffTooLabel".Translate(), ref IndustrialRunoffToo, "RT_Saltwater_IndustrialRunoffTooTooltip".Translate());
         listingStandard.End();
     }
 }

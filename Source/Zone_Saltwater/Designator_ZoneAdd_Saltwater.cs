@@ -29,7 +29,13 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
         {
            return false;
         }
-        if (RT_Saltwater_Settings.NoSalt)
+
+        if (!RT_Saltwater_Settings.IndustrialRunoffToo && c.IsPolluted(Map))
+        {
+            return false;
+        }
+
+        if (!RT_Saltwater_Settings.MarineAgriculture)
         {
             return c.GetWaterBodyType(Map) == WaterBodyType.Freshwater;
         }

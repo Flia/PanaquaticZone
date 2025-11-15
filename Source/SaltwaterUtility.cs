@@ -1,3 +1,4 @@
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -15,19 +16,10 @@ public static class SaltwaterUtility
         }
         //but in case it DOES have tags:
         //compare each cell's tags against each of plant's tags, return true if any cell has matching tag
-        foreach (var cell in settable.Cells)
-        {
-            foreach (var terrainTag in cell.GetTerrain(settable.Map).tags) 
-            { 
-                foreach (var wildTag in plantDef.plant.wildTerrainTags) 
-                { 
-                    if (terrainTag == wildTag) 
-                    { 
-                        return true; 
-                    }
-                }
-            } 
-        }
-        return false;
+        return (from cell in settable.Cells
+            from terrainTag in cell.GetTerrain(settable.Map).tags
+            from wildTag in plantDef.plant.wildTerrainTags
+            where terrainTag == wildTag
+            select terrainTag).Any();
     }
 }

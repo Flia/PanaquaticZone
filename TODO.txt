@@ -2,7 +2,6 @@ Issue tracker:
 - cypress patch STILL doesn't work. it's just never sown. May be vanilla problem actually - check without any mods
  - really need to figure out if any trees will work
  - I need sea tree to check how zone works with traversability standable
-- Do something about selection of plants when growing zone only covers salt
 - need to give a pass to all language strings in Language and XMLs
 
  
@@ -11,8 +10,6 @@ Ideas:
 - figure out how to hide the gizmo when plant defs for it are empty
 - new plants: sea silk, lilypads which allow walking, "Merfolk vase/pot" (Merfolk jelly), Bingdi lotus for polluted water
  - Merfolk jelly works like psylocaps. Adds "slippery" hediff which decreases water path cost?
-- perhaps I should just remove polluted tiles from selection?
- - allow them with a check just in case?
 - add modExtension to allow to explicitly define plant preference, use wildsowtags if there are none?
 - mudskippers are fun reference https://www.youtube.com/watch?v=CAQuoH_fOWM
 
