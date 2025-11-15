@@ -1,21 +1,26 @@
 Issue tracker:
 - cypress patch STILL doesn't work. it's just never sown. May be vanilla problem actually - check without any mods
  - really need to figure out if any trees will work
-- languages strings are nonsense in current context of this mod
-- wildsowtags are a continuous thing to watch out for
+ - I need sea tree to check how zone works with traversability standable
 - Do something about selection of plants when growing zone only covers salt
-- perhaps I should just remove polluted tiles from selection?
+- need to give a pass to all language strings in Language and XMLs
+
  
 Ideas:
 - other odyssey water plants? Plant_Reeds, Plant_LilyPad, Plant_Bulrush
 - figure out how to hide the gizmo when plant defs for it are empty
 - new plants: sea silk, lilypads which allow walking, "Merfolk vase/pot" (Merfolk jelly), Bingdi lotus for polluted water
  - Merfolk jelly works like psylocaps. Adds "slippery" hediff which decreases water path cost?
+- perhaps I should just remove polluted tiles from selection?
+ - allow them with a check just in case?
+- add modExtension to allow to explicitly define plant preference, use wildsowtags if there are none?
+- mudskippers are fun reference https://www.youtube.com/watch?v=CAQuoH_fOWM
 
 
 
 
-New algae type:
+"Merfolk vase":
+https://en.wikipedia.org/wiki/Mucilage and https://en.wikipedia.org/wiki/Petroleum_jelly . Latter has some fun uses
 Irish moss, sargassum, Eucheuma/sea moss/guso
 Porphyra might be nice as edible weed for salt. Quackweed/duckweed is freshwater irl
 Nori farms are a reference
@@ -23,6 +28,7 @@ Gorgeia: The origin of coral is explained in Greek mythology by the story of Per
 https://aquariumwhisperer.com/types-of-ocean-plants/ "coraline"
 goose barnacle
 "Not a true coral, but a type of coralline alga. Its calcified shell allows it to survive even on dry land, although it will grow slower."
+As it matures, the colony dies off, leaving behind a dense cluster of limestone fit for construction work.
 coralline rose
 contrasting colors. Red/teal, red/white, pink/orange, purple/cyan, magenta/ochre
 Red(from pink to vermillion) and black! possibly different color for shell on land?

@@ -34,8 +34,8 @@
 
     <ThingDef ParentName="WaterPlantBase">
         <defName>Plant_LotusPolluted</defName>
-        <label>lotus</label>
-        <description>An aquatic plant known for its fragrant flowers.</description>
+        <label>forked lotus</label>
+        <description>A mutant variety of lotus, no less beautiful for its origin. Something beautiful *can* grow from something ugly.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Beauty>14</Beauty>

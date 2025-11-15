@@ -1,28 +1,31 @@
-using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
 namespace RT_Saltwater;
 
-public static class SaltwaterUtility //A variant of vanilla PollutionUtility func
+public static class SaltwaterUtility
 {
-    private static readonly List<string> waterTags =
-        ["Ocean", "River", "WaterFreshShallow", "WaterFreshShallowStill", "WaterFreshShallowMoving", "WaterMarshy"];
-
+    //A variant of vanilla PollutionUtility func
     public static bool CanPlantAt(ThingDef plantDef, IPlantToGrowSettable settable)
     {
-        //if plant has no tags it's probably defined as cultivar only
+        //if plant has no wild tags it's probably defined as cultivar only
         if (plantDef.plant.wildTerrainTags == null || plantDef.plant.wildTerrainTags.Count == 0)
         {
             return true;
         }
-        //but in case it DOES have tags...
+        //but in case it DOES have tags:
+        //compare each cell's tags against each of plant's tags, return true if any cell has matching tag
         foreach (var cell in settable.Cells)
         {
-            foreach (var tag in waterTags)
-            {
-                if (cell.GetTerrain(settable.Map).HasTag(tag))
-                    return true;
+            foreach (var terrainTag in cell.GetTerrain(settable.Map).tags) 
+            { 
+                foreach (var wildTag in plantDef.plant.wildTerrainTags) 
+                { 
+                    if (terrainTag == wildTag) 
+                    { 
+                        return true; 
+                    }
+                }
             } 
         }
         return false;
