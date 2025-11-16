@@ -52,6 +52,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ModExtension_PlantPreference.cs" />
         <Compile Include="Patches\InsertGizmo.cs" />
         <Compile Include="RT_Saltwater.cs" />
         <Compile Include="RT_SaltwaterDefOf.cs" />

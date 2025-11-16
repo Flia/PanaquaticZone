@@ -4,10 +4,26 @@
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]</xpath>
         <attribute>MayRequire</attribute>
     </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]</xpath>
+        <value>
+            <li Class="RT_Saltwater.PlantPreferenceModExtension">
+                <plantPreference>Either</plantPreference>
+            </li>
+        </value>
+    </Operation>
 
     <Operation Class="PatchOperationAttributeRemove">
         <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]</xpath>
+        <value>
+            <li Class="RT_Saltwater.PlantPreferenceModExtension">
+                <plantPreference>Either</plantPreference>
+            </li>
+        </value>
     </Operation>
     
     <Operation Class="PatchOperationAttributeRemove">

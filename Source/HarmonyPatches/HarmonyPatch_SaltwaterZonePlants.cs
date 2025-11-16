@@ -7,13 +7,15 @@ namespace RT_Saltwater;
 [HarmonyPatch(typeof(PlantUtility), "CanSowOnGrower")]
 public static class HarmonyPatch_SaltwaterZonePlants
 {
-    public static bool Postfix(bool result, ThingDef plantDef, object obj)
+    public static void Postfix(ThingDef plantDef, object obj, ref bool __result)
     {
-        if (obj is not Zone_Saltwater saltwater) return result;
-        if (!PollutionUtility.CanPlantAt(plantDef, saltwater)) return result;
-        if (!SaltwaterUtility.CanPlantAt(plantDef, saltwater)) return result; 
-        return plantDef.plant.sowTags.Contains("RT_Saltwater") || 
-               plantDef.plant.sowTags.Contains("VCE_Aquatic") ||
-               plantDef.plant.sowTags.Contains("Water");
+        if (obj is Zone_Saltwater saltwater)
+        {
+            __result = PollutionUtility.CanPlantAt(plantDef, saltwater) && 
+                       SaltwaterUtility.CanPlantAt(plantDef, saltwater) &&
+                       (plantDef.plant.sowTags.Contains("RT_Saltwater") ||
+                        plantDef.plant.sowTags.Contains("VCE_Aquatic") ||
+                        plantDef.plant.sowTags.Contains("Water"));
+        }
     }
 }

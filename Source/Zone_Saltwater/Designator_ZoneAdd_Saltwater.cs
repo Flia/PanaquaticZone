@@ -23,22 +23,9 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
 
     public override AcceptanceReport CanDesignateCell(IntVec3 c)
     {
-        if (!base.CanDesignateCell(c).Accepted || 
-            c.GetTerrain(Map).passability != Traversability.Standable || 
-            !c.GetTerrain(Map).IsWater)
-        {
-           return false;
-        }
-
-        if (!RT_Saltwater_Settings.IndustrialRunoffToo && c.IsPolluted(Map))
-        {
-            return false;
-        }
-
-        if (!RT_Saltwater_Settings.MarineAgriculture)
-        {
-            return c.GetWaterBodyType(Map) == WaterBodyType.Freshwater;
-        }
-        return true;
+        if (!base.CanDesignateCell(c).Accepted || c.GetTerrain(Map).passability != Traversability.Standable) return false;
+        if (!RT_Saltwater_Settings.IndustrialRunoffToo && c.IsPolluted(Map)) return false;
+        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater) return true;
+        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && RT_Saltwater_Settings.MarineAgriculture;
     }
 }

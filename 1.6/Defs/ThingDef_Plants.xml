@@ -30,6 +30,11 @@
                 <li>RT_Saltwater</li>
             </sowTags>
         </plant>
+        <modExtensions>
+            <li Class="RT_Saltwater.PlantPreferenceModExtension">
+                <plantPreference>Saltwater</plantPreference>
+            </li>
+        </modExtensions>
     </ThingDef>
 
     <ThingDef ParentName="WaterPlantBase">

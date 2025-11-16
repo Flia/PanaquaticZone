@@ -1,20 +1,18 @@
 Issue tracker:
-- cypress patch STILL doesn't work. it's just never sown. May be vanilla problem actually - check without any mods
- - really need to figure out if any trees will work
- - I need sea tree to check how zone works with traversability standable
+- cypress IS vanilla problem, checking why
+ - for vanilla Growing zone, it appears to be a weird interaction with its wildTerrainTags. Once they are removed, colonists sow it.
+   - wait that means it's a problem for workGiver
+  - Mysteriously, it keeps on appearing in Saltwater too, but that might be wonky SaltwaterUtility check
+- check if any water-exclusive trees will work
+- I also need sea tree to check how zone works with traversability standable
 - need to give a pass to all language strings in Language and XMLs
+- added half of the modExtension support, but now need to stop pawns from sowing plants in bordering zones (e.g. river exiting into ocean)
 
- 
 Ideas:
-- other odyssey water plants? Plant_Reeds, Plant_LilyPad, Plant_Bulrush
+- give a warning when you try to set a plant that won't cover the entire zone
+ - funky to figure out how to make it work with expanding/shrinking
 - figure out how to hide the gizmo when plant defs for it are empty
 - new plants: sea silk, lilypads which allow walking, "Merfolk vase/pot" (Merfolk jelly), Bingdi lotus for polluted water
- - Merfolk jelly works like psylocaps. Adds "slippery" hediff which decreases water path cost?
-- add modExtension to allow to explicitly define plant preference, use wildsowtags if there are none?
-- mudskippers are fun reference https://www.youtube.com/watch?v=CAQuoH_fOWM
-
-
-
 
 "Merfolk vase":
 https://en.wikipedia.org/wiki/Mucilage and https://en.wikipedia.org/wiki/Petroleum_jelly . Latter has some fun uses
@@ -31,4 +29,8 @@ contrasting colors. Red/teal, red/white, pink/orange, purple/cyan, magenta/ochre
 Red(from pink to vermillion) and black! possibly different color for shell on land?
 goose barnacles for water presentation
 Maerl (also rhodolith) 
+
+ - Merfolk jelly works like psylocaps. Adds "slippery" hediff which decreases water path cost?
+ -alt, take from petroleum jelly and make it a temporary buff to cold comfortable temp. This is esp relevant for naked pawns like mermaids are
+- mudskippers are fun reference https://www.youtube.com/watch?v=CAQuoH_fOWM
 
