@@ -52,12 +52,11 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="HarmonyPatches\HarmonyPatch_Command_SetPlantToGrow.cs" />
         <Compile Include="ModExtension_PlantPreference.cs" />
-        <Compile Include="Patches\InsertGizmo.cs" />
         <Compile Include="RT_Saltwater.cs" />
-        <Compile Include="RT_SaltwaterDefOf.cs" />
         <Compile Include="RT_Saltwater_Settings.cs" />
-        <Compile Include="HarmonyPatches\HarmonyBoostrap.cs" />
+        <Compile Include="HarmonyPatches\HarmonyBootstrap.cs" />
         <Compile Include="HarmonyPatches\HarmonyPatch_SaltwaterZonePlants.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="SaltwaterUtility.cs" />
@@ -67,6 +66,11 @@
         <Compile Include="Zone_Saltwater\Zone_Saltwater.cs" />
     </ItemGroup>
     <ItemGroup>
+      <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+        <Publicize Include="Assembly-CSharp:Verse.Command_SetPlantToGrow.WarnAsAppropriate" />
       <PackageReference Include="Lib.Harmony" Version="2.4.1">
         <ExcludeAssets>runtime</ExcludeAssets>
       </PackageReference>

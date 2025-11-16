@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using RimWorld;
 using Verse;
 
@@ -8,8 +7,10 @@ namespace RT_Saltwater;
 
 public static class SaltwaterUtility
 {
-    private static readonly List<string> saltwaterTags = ["Ocean"];
-    private static readonly List<string> freshwaterTags = ["River", "WaterFreshShallow", "WaterFreshShallowStill", "WaterFreshShallowMoving", "WaterMarshy"];
+    private static readonly List<string> saltwaterTags =
+        ["Ocean"];
+    private static readonly List<string> freshwaterTags =
+        ["River", "WaterFreshShallow", "WaterFreshShallowStill", "WaterFreshShallowMoving", "WaterMarshy"];
     private static readonly List<string> eitherTags =
         ["Ocean", "River", "WaterFreshShallow", "WaterFreshShallowStill", "WaterFreshShallowMoving", "WaterMarshy"];
     
@@ -33,7 +34,6 @@ public static class SaltwaterUtility
             select terrainTag).Any();
     }
     
-    [CanBeNull]
     public static List<string> CreateTagsFromPlantPreferenceModExtension(ThingDef plantDef)
     {
         var plantPreference = WaterPlantPreference.Freshwater;

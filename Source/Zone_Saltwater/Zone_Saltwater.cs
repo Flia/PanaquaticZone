@@ -9,7 +9,7 @@ public class Zone_Saltwater : Zone_Growing
 {
     protected override Color NextZoneColor => SaltwaterZoneColorUtility.NextSaltwaterZoneColor();
     
-    public Zone_Saltwater() //okay it IS needed but how hell if I know
+    public Zone_Saltwater() //okay it IS needed but how, hell if I know
     {
     }
 
