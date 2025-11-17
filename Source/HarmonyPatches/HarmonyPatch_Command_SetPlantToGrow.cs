@@ -4,21 +4,13 @@ using RimWorld;
 
 namespace RT_Saltwater;
 
-[HarmonyPatch(typeof(Command_SetPlantToGrow), "ProcessInput")]
-public class HarmonyPatch_Command_SetPlantToGrow
-{
-    public static void Postfix()
-    {
-        //Messages.Message((string) "ProcessInput", MessageTypeDefOf.CautionInput, false);
-    }
-}
-
+//Uses Krafts.Publicizer to access WarnAsAppropriate method. It works, but is it the best solution?
 [HarmonyPatch(typeof(Command_SetPlantToGrow), "WarnAsAppropriate")]
-public class HarmonyPatch_WarnAsAppropriate
+public static class HarmonyPatch_Command_SetPlantToGrow
 {
-    public static void Postfix()
+    public static void Postfix(ThingDef plantDef, IPlantToGrowSettable ___settable)
     {
-        Messages.Message((string) "WarnAsAppropriate", MessageTypeDefOf.CautionInput, false);
+        SaltwaterUtility.WarnIfPreferenceMismatch(plantDef, ___settable);
     }
 }
 

@@ -1,18 +1,19 @@
 Issue tracker:
-- cypress IS vanilla problem, checking why
- - for vanilla Growing zone, it appears to be a weird interaction with its wildTerrainTags. Once they are removed, colonists sow it.
-   - wait that means it's a problem for workGiver
-  - Mysteriously, it keeps on appearing in Saltwater too, but that might be wonky SaltwaterUtility check
 - check if any water-exclusive trees will work
-- I also need sea tree to check how zone works with traversability standable
+- added half of the modExtension support, now need to stop pawns from sowing plants in bordering zones (e.g. river exiting into ocean)
+- extend the WarnPreferenceMismatch to expanding/shrinking, not just selecting the plant
+ - should I add pollution check there?
+
+Backburner:
 - need to give a pass to all language strings in Language and XMLs
-- added half of the modExtension support, but now need to stop pawns from sowing plants in bordering zones (e.g. river exiting into ocean)
+- figure out how to hide the gizmo when plant defs for it are empty
+- stupid cypress damn it to hell
+ - has a vanilla problem of not being sown in Growing Zones.
+ It appears to be a weird interaction with its wildTerrainTags. Once they are removed, colonists sow it.
 
 Ideas:
-- give a warning when you try to set a plant that won't cover the entire zone
- - funky to figure out how to make it work with expanding/shrinking
-- figure out how to hide the gizmo when plant defs for it are empty
 - new plants: sea silk, lilypads which allow walking, "Merfolk vase/pot" (Merfolk jelly), Bingdi lotus for polluted water
+
 
 "Merfolk vase":
 https://en.wikipedia.org/wiki/Mucilage and https://en.wikipedia.org/wiki/Petroleum_jelly . Latter has some fun uses
