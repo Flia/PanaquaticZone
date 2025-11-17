@@ -1,38 +1,18 @@
 Issue tracker:
 - check if any water-exclusive trees will work
-- added half of the modExtension support, now need to stop pawns from sowing plants in bordering zones (e.g. river exiting into ocean)
 - extend the WarnPreferenceMismatch to expanding/shrinking, not just selecting the plant
  - should I add pollution check there?
+- need to resolve the issue of the default plant - something purely decorative most likely
+ - need to update designator icon once I have that sprite
 
 Backburner:
 - need to give a pass to all language strings in Language and XMLs
 - figure out how to hide the gizmo when plant defs for it are empty
 - stupid cypress damn it to hell
- - has a vanilla problem of not being sown in Growing Zones.
- It appears to be a weird interaction with its wildTerrainTags. Once they are removed, colonists sow it.
+ - has vanilla problem of not being sown in Growing Zones. It appears to be a weird interaction with its wildTerrainTags.
 
 Ideas:
-- new plants: sea silk, lilypads which allow walking, "Merfolk vase/pot" (Merfolk jelly), Bingdi lotus for polluted water
+- name of mod maybe shouldn't be Saltwater anymore. Unified Aquatic Zone? "UAZ" is a funny acronym tho lol
+- https://rimworldwiki.com/wiki/Modding_Tutorials/Plant_Rendering says that plants have a separate polluted texture?
 
-
-"Merfolk vase":
-https://en.wikipedia.org/wiki/Mucilage and https://en.wikipedia.org/wiki/Petroleum_jelly . Latter has some fun uses
-Irish moss, sargassum, Eucheuma/sea moss/guso
-Porphyra might be nice as edible weed for salt. Quackweed/duckweed is freshwater irl
-Nori farms are a reference
-Gorgeia: The origin of coral is explained in Greek mythology by the story of Perseus. Having petrified Cetus, the sea monster threatening Andromeda, Perseus placed Medusa's head on the riverbank while he washed his hands. When he recovered her head, he saw that her blood had turned the seaweed (in some variants the reeds) into red coral. Thus, the Greek word for coral is 'Gorgeia', as Medusa was one of the three Gorgons.
-https://aquariumwhisperer.com/types-of-ocean-plants/ "coraline"
-goose barnacle
-"Not a true coral, but a type of coralline alga. Its calcified shell allows it to survive even on dry land, although it will grow slower."
-As it matures, the colony dies off, leaving behind a dense cluster of limestone fit for construction work.
-coralline rose
-contrasting colors. Red/teal, red/white, pink/orange, purple/cyan, magenta/ochre
-Red(from pink to vermillion) and black! possibly different color for shell on land?
-goose barnacles for water presentation
-Maerl (also rhodolith) 
-shingle urchins and limpets, Coelopleurus exquisitus
-
- - Merfolk jelly works like psylocaps. Adds "slippery" hediff which decreases water path cost?
- -alt, take from petroleum jelly and make it a temporary buff to cold comfortable temp. This is esp relevant for naked pawns like mermaids are
-- mudskippers are fun reference https://www.youtube.com/watch?v=CAQuoH_fOWM
 

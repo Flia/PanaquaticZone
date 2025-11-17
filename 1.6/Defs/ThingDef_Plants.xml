@@ -1,53 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <ThingDef ParentName="PlantBaseNonEdible">
-        <defName>RT_Swiftcoral</defName>
-        <label>swiftcoral</label>
-        <description>A genetically-engineered coral which grows very fast. It is a renewable source of limestone, useful for colonies with little land but a lot of water.</description>
-        <statBases>
-            <MaxHitPoints>300</MaxHitPoints>
-            <Flammability>0</Flammability>
-        </statBases>
-        <selectable>true</selectable>
-        <neverMultiSelect>false</neverMultiSelect>
-        <graphicData>
-            <texPath>Things/Plant/Swiftcoral</texPath>
-            <graphicClass>Graphic_Random</graphicClass>
-        </graphicData>
-        <plant>
-            <pollution>Any</pollution>
-            <completelyIgnoreFertility>true</completelyIgnoreFertility>
-            <growDays>2</growDays>
-            <harvestWork>800</harvestWork>
-            <lifespanDaysPerGrowDays>9</lifespanDaysPerGrowDays>
-            <harvestedThingDef>ChunkLimestone</harvestedThingDef>
-            <harvestYield>1</harvestYield>
-            <harvestTag>Standard</harvestTag>
-            <purpose>Misc</purpose>
-            <neverBlightable>true</neverBlightable>
-            <blockAdjacentSow>true</blockAdjacentSow>
-            <sowTags>
-                <li>RT_Saltwater</li>
-            </sowTags>
-        </plant>
-        <modExtensions>
-            <li Class="RT_Saltwater.PlantPreferenceModExtension">
-                <plantPreference>Saltwater</plantPreference>
-            </li>
-        </modExtensions>
-    </ThingDef>
-
     <ThingDef ParentName="WaterPlantBase">
-        <defName>Plant_LotusPolluted</defName>
+        <defName>RT_ForkedLotus</defName>
         <label>forked lotus</label>
-        <description>A mutant variety of lotus, no less beautiful for its origin. Something beautiful *can* grow from something ugly.</description>
+        <description>A mutant variety of lotus that evolved in waters bordering polluted wastelands. Its adaptations made it very hardy, able to survive in pollution and salty waters alike. However, it became unable to bear fruit and survive in the wild. Despite its origin, it's still quite beautiful.</description>
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Beauty>14</Beauty>
             <BeautyOutdoors>14</BeautyOutdoors>
         </statBases>
         <graphicData>
-            <texPath>Things/Plant/Lotus</texPath>
+            <texPath>Things/Plant/ForkedLotus</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <ingestible>
@@ -58,22 +21,25 @@
             <topWindExposure>0.1</topWindExposure>
             <growDays>1.5</growDays>
             <lifespanDaysPerGrowDays>5</lifespanDaysPerGrowDays>
+            <sowWork>750</sowWork>
             <visualSizeRange>0.5~0.6</visualSizeRange>
             <purpose>Beauty</purpose>
-            <pollution>PollutedOnly</pollution>
+            <pollution>Any</pollution>
             <sowTags>
                 <li>RT_Saltwater</li>
+                <li>Decorative</li>
             </sowTags>
-            <wildTerrainTags>
-                <li>WaterMarshy</li>
-                <li>WaterFreshShallowStill</li>
-            </wildTerrainTags>
+            <modExtensions>
+                <li Class="RT_Saltwater.PlantPreferenceModExtension">
+                    <plantPreference>Either</plantPreference>
+                </li>
+            </modExtensions>
         </plant>
-        <comps>
+        <!--<comps>
             <li Class="CompProperties_Glower">
                 <glowRadius>5</glowRadius>
                 <glowColor>(150,150,20,0)</glowColor>
             </li>
-        </comps>
+        </comps>-->
     </ThingDef>
 </Defs>

@@ -8,7 +8,7 @@ public class HarmonyBootstrap
 {
     static HarmonyBootstrap()
     {
-        var harmony = new Harmony("com.royallytipsy.saltwater");
+        Harmony harmony = new("com.royallytipsy.saltwater");
         harmony.PatchAll();
     }
 }

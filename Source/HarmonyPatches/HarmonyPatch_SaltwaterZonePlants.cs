@@ -13,9 +13,7 @@ public static class HarmonyPatch_SaltwaterZonePlants
         {
             __result = PollutionUtility.CanPlantAt(plantDef, saltwater) && 
                        SaltwaterUtility.CanPlantAt(plantDef, saltwater) &&
-                       (plantDef.plant.sowTags.Contains("RT_Saltwater") ||
-                        plantDef.plant.sowTags.Contains("VCE_Aquatic") ||
-                        plantDef.plant.sowTags.Contains("Water"));
+                       plantDef.plant.sowTags.Contains("RT_Saltwater");
         }
     }
 }

@@ -52,8 +52,9 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="HarmonyPatches\HarmonyPatch_Command_SetPlantToGrow.cs" />
+        <Compile Include="HarmonyPatches\HarmonyPatch_AddWaterMismatchWarn.cs" />
         <Compile Include="ModExtension_PlantPreference.cs" />
+        <Compile Include="Patches\GivePlantTags.cs" />
         <Compile Include="RT_Saltwater.cs" />
         <Compile Include="RT_Saltwater_Settings.cs" />
         <Compile Include="HarmonyPatches\HarmonyBootstrap.cs" />
