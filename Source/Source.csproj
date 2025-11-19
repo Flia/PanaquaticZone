@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
-            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{659624E4-0F80-4916-BECC-80C7DFD1D028}</ProjectGuid>
         <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <TargetFramework>net48</TargetFramework>
         <RootNamespace>RT_Saltwater</RootNamespace>
         <AssemblyName>RT_Saltwater</AssemblyName>
-        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
+        <TargetFramework>net48</TargetFramework>
         <LangVersion>latestmajor</LangVersion>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>false</DebugSymbols>
-        <DebugType>full</DebugType>
+        <DebugType>none</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>..\1.6\Assemblies</OutputPath>
         <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
+        <DebugType>none</DebugType>
         <Optimize>true</Optimize>
         <OutputPath>..\1.6\Assemblies</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
@@ -52,21 +40,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="HarmonyPatches\HarmonyPatch_AddWaterMismatchWarn.cs" />
-        <Compile Include="ModExtension_PlantPreference.cs" />
-        <Compile Include="Patches\GivePlantTags.cs" />
-        <Compile Include="RT_Saltwater.cs" />
-        <Compile Include="RT_Saltwater_Settings.cs" />
-        <Compile Include="HarmonyPatches\HarmonyBootstrap.cs" />
-        <Compile Include="HarmonyPatches\HarmonyPatch_SaltwaterZonePlants.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="SaltwaterUtility.cs" />
-        <Compile Include="Zone_Saltwater\Designator_ZoneAdd_Saltwater.cs" />
-        <Compile Include="Zone_Saltwater\Designator_ZoneAdd_Saltwater_Expand.cs" />
-        <Compile Include="Zone_Saltwater\SaltwaterZoneColorUtility.cs" />
-        <Compile Include="Zone_Saltwater\Zone_Saltwater.cs" />
-    </ItemGroup>
-    <ItemGroup>
       <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -76,13 +49,7 @@
         <ExcludeAssets>runtime</ExcludeAssets>
       </PackageReference>
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
-
+    <PropertyGroup>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
 </Project>
