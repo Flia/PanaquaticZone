@@ -1,13 +1,12 @@
 Issue tracker:
 - check if any water-exclusive trees will work
-- extend the WarnPreferenceMismatch to expanding, not just selecting the plant
- - should I add pollution check there?
 - need to resolve the issue of the default plant - something purely decorative most likely
  - need to update designator icon once I have that sprite
 
 Backburner:
 - need to give a pass to all language strings in Language and XMLs
 - figure out how to hide the gizmo when plant defs for it are empty
+- mod options for returning the gizmos from Biosphere/VPlantsE
 - stupid cypress damn it to hell
  - has vanilla problem of not being sown in Growing Zones. It appears to be a weird interaction with its wildTerrainTags.
 

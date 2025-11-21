@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -27,5 +28,13 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
         if (!RT_Saltwater_Settings.IndustrialRunoffToo && c.IsPolluted(Map)) return false;
         if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater) return true;
         return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && RT_Saltwater_Settings.MarineAgriculture;
+    }
+
+    //Another use of Krafts.Publicizer. I can probably do without tbh
+    public override void DesignateMultiCell(IEnumerable<IntVec3> cells)
+    {
+        base.DesignateMultiCell(cells);
+        Zone_Saltwater zone = SelectedZone as Zone_Saltwater;
+        if (zone != null) SaltwaterUtility.WarnIfPreferenceMismatch(zone.plantDefToGrow, zone);
     }
 }

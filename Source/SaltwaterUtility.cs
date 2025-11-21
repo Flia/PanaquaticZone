@@ -25,7 +25,7 @@ public static class SaltwaterUtility
             plantTags.Overlaps(cell.GetTerrain(settable.Map).tags.OrElseEmptyEnumerable()));
     }
 
-    //should I also make a check for polluted water?
+    //should I also make it check for polluted water?
     public static void WarnIfPreferenceMismatch(ThingDef plantDef, IPlantToGrowSettable settable)
     {
         if (plantDef.HasModExtension<PlantPreferenceModExtension>() &&
