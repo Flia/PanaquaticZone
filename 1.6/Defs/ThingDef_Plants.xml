@@ -16,18 +16,19 @@
         <ingestible>
             <preferability>NeverForNutrition</preferability>
         </ingestible>
+        <!--<altitudeLayer>Item</altitudeLayer>-->
         <selectable>true</selectable>
         <plant>
             <topWindExposure>0.1</topWindExposure>
             <growDays>1.5</growDays>
             <lifespanDaysPerGrowDays>5</lifespanDaysPerGrowDays>
             <sowWork>750</sowWork>
-            <visualSizeRange>0.5~0.6</visualSizeRange>
+            <visualSizeRange>0.5~1</visualSizeRange>
             <purpose>Beauty</purpose>
             <pollution>Any</pollution>
             <sowTags>
                 <li>RT_Saltwater</li>
-                <li>Decorative</li>
+                <!--<li>Decorative</li>-->
             </sowTags>
         </plant>
         <modExtensions>

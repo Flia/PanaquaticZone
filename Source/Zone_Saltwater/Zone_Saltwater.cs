@@ -9,14 +9,15 @@ public class Zone_Saltwater : Zone_Growing
 {
     protected override Color NextZoneColor => SaltwaterZoneColorUtility.NextSaltwaterZoneColor();
     
-    public Zone_Saltwater() //okay it IS needed but how, hell if I know
+    //okay it IS needed but how, hell if I know
+    public Zone_Saltwater()
     {
     }
 
     public Zone_Saltwater(ZoneManager zoneManager) : base(zoneManager)
     {
         label = "RT_Saltwater_SaltwaterZone".Translate();
-        SetPlantDefToGrow(DefDatabase<ThingDef>.GetNamed("RT_Swiftcoral"));
+        SetPlantDefToGrow(DefDatabase<ThingDef>.GetNamed("RT_ForkedLotus"));
     }
     
     public override IEnumerable<Gizmo> GetZoneAddGizmos()
