@@ -1,0 +1,15 @@
+
+Features:
+- If you have any of those mods loaded, the zone adds plants from <Merren mod>, Vanilla Plants Expanded - More plants and [LTS]Biosphere, and removes their gizmos.
+- I also add the lotus from Odyssey, but since I didn't want to define a new Def for a cultivar variant it's a bit picky about where it can be grown.
+- The two merfolk plants are defined as both freshwater and saltwater plants, as I wanted them to be available for marine colonies. Vanilla's and Biosphere's only grow in freshwater, since that is how their own aquatic zones work.
+- the game will warn you if you try to sow a plant that cannot grow in selected zone because of plant's water preference mismatch.
+- there's a mod setting to disallow the zone from selecting saltwater tiles, if you want it to behave closer to how other two mods do it. By default it is allowed though.
+- there's another check for polluted water. This one is by default not checked, as no plants in any of the three mods will be sown there anyway.
+
+In case suddenly any other modders would like to leverage this mod:
+- the main sowTag is RT_Saltwater. If you are already using the tag from VPlantsExpanded ("VCE_Aquatic") or Biosphere ("Water") you can skip this step - I add my own tag at game startup. You still probably want to add this mod as (optional?) dependency, though.
+- you can set the preference for saltwater, freshwater, either, or neither, by using ModExtension. However, if your plant has any wildTerrainTags, it will be ignored - if you wish to have both a wild plant nad a cultivar you better define it as separate defs. If a plant has no ModExtension and no wildTerrainTags it will use freshwater tags.
+
+Known issues:
+- if none of the three mods above are in your modlist, the default plant will be the humble potato. Which of course cannot be grown in water, but what behavior to have in this situation I don't know.

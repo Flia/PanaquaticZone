@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
     <Operation Class="PatchOperationAttributeRemove">
-        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]</xpath>
+        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
     </Operation>
     <Operation Class="PatchOperationAddModExtension">
-        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]</xpath>
-        <value>
-            <li Class="RT_Saltwater.PlantPreferenceModExtension">
-                <plantPreference>Either</plantPreference>
-            </li>
-        </value>
-    </Operation>
-
-    <Operation Class="PatchOperationAttributeRemove">
-        <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]</xpath>
-        <attribute>MayRequire</attribute>
-    </Operation>
-    <Operation Class="PatchOperationAddModExtension">
-        <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]</xpath>
+        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
         <value>
             <li Class="RT_Saltwater.PlantPreferenceModExtension">
                 <plantPreference>Either</plantPreference>
@@ -26,8 +13,8 @@
         </value>
     </Operation>
     
-    <Operation Class="PatchOperationAttributeRemove">
+   <!--<Operation Class="PatchOperationAttributeRemove">
         <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
-    </Operation>
+    </Operation>-->
 </Patch>

@@ -11,6 +11,5 @@ public enum WaterPlantPreference
 {
     Saltwater,
     Freshwater,
-    Either,
-    Neither,
+    Either
 }

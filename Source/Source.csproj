@@ -40,13 +40,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-        <Publicize Include="Assembly-CSharp:Verse.Command_SetPlantToGrow.WarnAsAppropriate" />
-        <Publicize Include="Assembly-CSharp:RimWorld.Designator_ZoneAdd.SelectedZone" />
-        <Publicize Include="Assembly-CSharp:RimWorld.Zone_Growing.plantDefToGrow" />
       <PackageReference Include="Lib.Harmony" Version="2.4.1">
         <ExcludeAssets>runtime</ExcludeAssets>
       </PackageReference>

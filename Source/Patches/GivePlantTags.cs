@@ -31,8 +31,6 @@ public class GivePlantTags
                         SaltwaterUtility.saltwaterTags,
                     WaterPlantPreference.Either =>
                         SaltwaterUtility.eitherTags,
-                    WaterPlantPreference.Neither =>
-                        null,
                     _ =>
                         SaltwaterUtility.freshwaterTags
                 };

@@ -1,4 +1,5 @@
 Issue tracker:
+- automatic tags is an ISSUE. Biosphere built watertiles have single tag of "Water" which wrecks my thing
 - check if any water-exclusive trees will work
 - need to resolve the issue of the default plant - something purely decorative most likely
  - need to update designator icon once I have that sprite
@@ -12,7 +13,6 @@ Backburner:
 
 Ideas:
 - name of mod maybe shouldn't be Saltwater anymore. Unified Aquatic (Growing) Zone? "UAZ" is a funny acronym tho lol
-- https://rimworldwiki.com/wiki/Modding_Tutorials/Plant_Rendering says that plants have a separate polluted texture?
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation
-
+- preference mismatch warning should maybe tell the preference
 

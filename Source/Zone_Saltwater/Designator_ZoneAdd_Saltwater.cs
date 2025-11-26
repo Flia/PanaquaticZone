@@ -5,6 +5,7 @@ using Verse;
 
 namespace RT_Saltwater;
 
+//Designator_ZoneAdd_Fishing has some pretty convoluted code for cell acceptance. I wonder why?
 public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
 {
     protected override string NewZoneLabel => "RT_Saltwater_SaltwaterZone".Translate();
@@ -24,17 +25,18 @@ public class Designator_ZoneAdd_Saltwater : Designator_ZoneAdd
 
     public override AcceptanceReport CanDesignateCell(IntVec3 c)
     {
-        if (!base.CanDesignateCell(c).Accepted || c.GetTerrain(Map).passability != Traversability.Standable) return false;
+        if (!base.CanDesignateCell(c).Accepted || c.GetTerrain(Map).passability == Traversability.Impassable) return false;
         if (!RT_Saltwater_Settings.IndustrialRunoffToo && c.IsPolluted(Map)) return false;
         if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater) return true;
         return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && RT_Saltwater_Settings.MarineAgriculture;
     }
 
-    //Another use of Krafts.Publicizer. I can probably do without tbh
     public override void DesignateMultiCell(IEnumerable<IntVec3> cells)
     {
         base.DesignateMultiCell(cells);
-        Zone_Saltwater zone = SelectedZone as Zone_Saltwater;
-        if (zone != null) SaltwaterUtility.WarnIfPreferenceMismatch(zone.plantDefToGrow, zone);
+        if (Find.Selector.SelectedZone is Zone_Saltwater zone)
+        {
+            SaltwaterUtility.WarnIfPreferenceMismatch(zone.GetPlantDefToGrow(), zone);
+        }
     }
 }
