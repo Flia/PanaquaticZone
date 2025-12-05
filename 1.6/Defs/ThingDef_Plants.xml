@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <ThingDef ParentName="WaterPlantBase">
+    <!--<ThingDef ParentName="WaterPlantBase">
         <defName>RT_ForkedLotus</defName>
         <label>forked lotus</label>
         <description>A mutant variety of lotus that evolved in waters bordering polluted wastelands. Its adaptations made it very hardy, able to survive in pollution and salty waters alike. However, it became unable to bear fruit and survive in the wild. Despite its origin, it's still quite beautiful.</description>
@@ -16,7 +16,7 @@
         <ingestible>
             <preferability>NeverForNutrition</preferability>
         </ingestible>
-        <!--<altitudeLayer>Item</altitudeLayer>-->
+        <altitudeLayer>Item</altitudeLayer>
         <selectable>true</selectable>
         <plant>
             <topWindExposure>0.1</topWindExposure>
@@ -28,7 +28,7 @@
             <pollution>Any</pollution>
             <sowTags>
                 <li>RT_Saltwater</li>
-                <!--<li>Decorative</li>-->
+                <li>Decorative</li>
             </sowTags>
         </plant>
         <modExtensions>
@@ -36,11 +36,5 @@
                 <plantPreference>Either</plantPreference>
             </li>
         </modExtensions>
-        <!--<comps>
-            <li Class="CompProperties_Glower">
-                <glowRadius>5</glowRadius>
-                <glowColor>(150,150,20,0)</glowColor>
-            </li>
-        </comps>-->
-    </ThingDef>
+    </ThingDef>-->
 </Defs>

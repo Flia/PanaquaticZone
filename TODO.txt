@@ -1,18 +1,22 @@
 Issue tracker:
-- automatic tags is an ISSUE. Biosphere built watertiles have single tag of "Water" which wrecks my thing
-- check if any water-exclusive trees will work
-- need to resolve the issue of the default plant - something purely decorative most likely
- - need to update designator icon once I have that sprite
+- REFACTOR NAME
+- logo
+- preview.png
+- screenshots
+- need to give a pass to all language strings in Language and XMLs
+- add mod description to About.xml once I have it
+- kill forked lotus
 
 Backburner:
-- need to give a pass to all language strings in Language and XMLs
-- figure out how to hide the gizmo when plant defs for it are empty
-- mod options for returning the gizmos from Biosphere/VPlantsE
+- check if any water-exclusive trees will work
 - stupid cypress damn it to hell
  - has vanilla problem of not being sown in Growing Zones. It appears to be a weird interaction with its wildTerrainTags.
+- need to resolve the issue of the default plant - something purely decorative most likely
+ - need to update designator icon once I have that sprite
+- figure out how to hide the gizmo when plant defs for it are empty
+ - mod options for returning the gizmos from Biosphere/VPlantsE
 
 Ideas:
-- name of mod maybe shouldn't be Saltwater anymore. Unified Aquatic (Growing) Zone? "UAZ" is a funny acronym tho lol
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation
 - preference mismatch warning should maybe tell the preference
 

@@ -12,9 +12,12 @@
             </li>
         </value>
     </Operation>
-    
-   <!--<Operation Class="PatchOperationAttributeRemove">
-        <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae"]</xpath>
-        <attribute>MayRequire</attribute>
-    </Operation>-->
+
+    <Operation Class="PatchOPerationConditional">
+        <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae" and @AttributeName="MayRequire"]</xpath>
+        <match Class="PatchOperationAttributeRemove">
+            <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae"]</xpath>
+            <attribute>MayRequire</attribute>
+        </match>
+    </Operation>
 </Patch>
