@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <Panaquatic_PanaquaticZone>Saltwater Growing Zone</Panaquatic_PanaquaticZone>
-    <Panaquatic_PanaquaticZone_description>Allows to grow Merren specialties of fibrekelp and quackweed. They are hardy enough to grow in saltwater.</Panaquatic_PanaquaticZone_description>
-    <Panaquatic_Settings>royallyTipsy's Saltwater Growing Zone</Panaquatic_Settings>
-    <Panaquatic_MarineAgricultureLabel>Allows the zone to cover ocean tiles</Panaquatic_MarineAgricultureLabel>
-    <Panaquatic_MarineAgricultureTooltip>On by default. No idea how well ocean water is tagged in other mods, so if you turn it off it may not always work.</Panaquatic_MarineAgricultureTooltip>
-    <Panaquatic_IndustrialRunoffTooLabel>Allows the zone to cover polluted tiles</Panaquatic_IndustrialRunoffTooLabel>
+    <Panaquatic_PanaquaticZone>Panaquatic growing zone</Panaquatic_PanaquaticZone>
+    <Panaquatic_PanaquaticZone_description>Create a zone where colonists will try to grow aquatic plants. This zone can be placed over both fresh and salty water, unless changed in mod settings.</Panaquatic_PanaquaticZone_description>
+    <Panaquatic_Settings>Unified Panaquatic Growing Zone</Panaquatic_Settings>
+    <Panaquatic_MarineAgricultureLabel>Allows to place the zone over ocean tiles</Panaquatic_MarineAgricultureLabel>
+    <Panaquatic_MarineAgricultureTooltip>On by default. You probably want this off if you aren't using Merren though.</Panaquatic_MarineAgricultureTooltip>
+    <Panaquatic_IndustrialRunoffTooLabel>Allows to place the zone over polluted tiles</Panaquatic_IndustrialRunoffTooLabel>
     <Panaquatic_IndustrialRunoffTooTooltip>Off by default. Excluded for convenience: I'm yet to see a mod with cultivated plants which grow in polluted water. Perhaps I don't play enough mods. Report if you see something fun here, alright?</Panaquatic_IndustrialRunoffTooTooltip>
     <Panaquatic_WarnPreferenceMismatch>{0} will not be sown in the entire zone because of water preference mismatch</Panaquatic_WarnPreferenceMismatch>
 </LanguageData>

@@ -1,12 +1,9 @@
 Issue tracker:
-- REFACTOR NAME
 - package ID. Need my own name too lol
 - preview.png
 - screenshots
 - need to give a pass to all language strings in Language and XMLs
-- add mod description to About.xml once I have it
-- readme and license
-- kill forked lotus
+- ...maybe just ask about how to remove gizmos on the mod channel? I can't be that shy can I?
 
 Backburner:
 - check if any water-exclusive trees will work

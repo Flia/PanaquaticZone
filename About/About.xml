@@ -6,7 +6,7 @@
         <li>1.6</li>
     </supportedVersions>
     <packageId>royallyTipsy.PanaquaticZone</packageId>
-    <description>I will add something.</description>
+    <description>This mod adds a standalone aquatic zone. It takes plants from mods like Vanilla Plants Expanded - More Plants, [LTS]Biosphere, and Goji's Fantasy Race: Merren, and puts them into a unified gizmo. It also allows growing in ocean tiles and define salinity preference for plants.</description>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>

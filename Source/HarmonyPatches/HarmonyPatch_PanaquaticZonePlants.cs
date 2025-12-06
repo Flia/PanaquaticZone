@@ -9,10 +9,10 @@ public static class HarmonyPatch_PanaquaticZonePlants
 {
     public static void Postfix(ThingDef plantDef, object obj, ref bool __result)
     {
-        if (obj is Zone_Panaquatic saltwater)
+        if (obj is Zone_Panaquatic panaquatic)
         {
-            __result = PollutionUtility.CanPlantAt(plantDef, saltwater) && 
-                       PanaquaticUtility.CanPlantAt(plantDef, saltwater) &&
+            __result = PollutionUtility.CanPlantAt(plantDef, panaquatic) && 
+                       PanaquaticUtility.CanPlantAt(plantDef, panaquatic) &&
                        plantDef.plant.sowTags.Contains("Panaquatic_Zone");
         }
     }

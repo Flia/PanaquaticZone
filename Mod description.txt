@@ -26,5 +26,5 @@ If you'd like to make an aquatic plant that can be sown in Panaquatic Zone (wow,
 [*]If none of the three mods above are in your modlist, the default plant will be the humble potato. Which of course cannot be grown in water, but what behavior to have in this situation I don't know.
 [*]Mods which add water tiles, especially buildable variety, may interact funny. I tried to account for that but I'm a novice, so [strike]give me a break[/strike] report any issues so I might refine this.
 [*]Since my zone inherits from vanilla Growing Zone, mods which affect it should affect Panaquatic too. On one hand, this allows for Smart Farming. On the other, right-clicking on Growing Zone gizmo and hiding or unhiding zones will also do so for my Panaquatic zones. If there's a lot of feedback that this is inconvenient, I will think about rewriting my code, but for now I am tired boss
-
+You can also peek at my code over at the [url=github.com/Flia/PanaquaticZone]Github repo[/url].
 (...Did you know that "euryhaline" means an organism that can survive a wide range of salinities? I didn't. Would that have been a better name?)
