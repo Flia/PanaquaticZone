@@ -1,14 +1,14 @@
 using HarmonyLib;
 using Verse;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
 [StaticConstructorOnStartup]
 public class HarmonyBootstrap
 {
     static HarmonyBootstrap()
     {
-        Harmony harmony = new("com.royallytipsy.saltwater");
+        Harmony harmony = new("com.royallytipsy.panaquaticzone");
         harmony.PatchAll();
     }
 }

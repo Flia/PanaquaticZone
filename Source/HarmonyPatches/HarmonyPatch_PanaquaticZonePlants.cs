@@ -2,18 +2,18 @@ using RimWorld;
 using Verse;
 using HarmonyLib;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
 [HarmonyPatch(typeof(PlantUtility), "CanSowOnGrower")]
-public static class HarmonyPatch_SaltwaterZonePlants
+public static class HarmonyPatch_PanaquaticZonePlants
 {
     public static void Postfix(ThingDef plantDef, object obj, ref bool __result)
     {
-        if (obj is Zone_Saltwater saltwater)
+        if (obj is Zone_Panaquatic saltwater)
         {
             __result = PollutionUtility.CanPlantAt(plantDef, saltwater) && 
-                       SaltwaterUtility.CanPlantAt(plantDef, saltwater) &&
-                       plantDef.plant.sowTags.Contains("RT_Saltwater");
+                       PanaquaticUtility.CanPlantAt(plantDef, saltwater) &&
+                       plantDef.plant.sowTags.Contains("Panaquatic_Zone");
         }
     }
 }

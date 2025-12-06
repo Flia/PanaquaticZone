@@ -1,10 +1,11 @@
 Issue tracker:
 - REFACTOR NAME
-- logo
+- package ID. Need my own name too lol
 - preview.png
 - screenshots
 - need to give a pass to all language strings in Language and XMLs
 - add mod description to About.xml once I have it
+- readme and license
 - kill forked lotus
 
 Backburner:

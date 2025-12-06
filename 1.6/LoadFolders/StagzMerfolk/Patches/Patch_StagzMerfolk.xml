@@ -7,7 +7,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
         <value>
-            <li Class="RT_Saltwater.PlantPreferenceModExtension">
+            <li Class="PanaquaticZone.PlantPreferenceModExtension">
                 <plantPreference>Either</plantPreference>
             </li>
         </value>

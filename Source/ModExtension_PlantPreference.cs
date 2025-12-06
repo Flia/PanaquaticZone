@@ -1,6 +1,6 @@
 using Verse;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
 public class PlantPreferenceModExtension : DefModExtension 
 { 

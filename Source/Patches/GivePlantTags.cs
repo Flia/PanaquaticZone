@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
 [StaticConstructorOnStartup]
 public class GivePlantTags
@@ -14,10 +14,10 @@ public class GivePlantTags
         {
             if (terrainDef.waterBodyType == WaterBodyType.Freshwater)
             {
-                terrainDef.tags.Add("RT_Saltwater_freshwater_terrain_tag");
+                terrainDef.tags.Add("Panaquatic_freshwater_terrain_tag");
             } else if (terrainDef.waterBodyType == WaterBodyType.Saltwater)
             {
-                terrainDef.tags.Add("RT_Saltwater_saltwater_terrain_tag");
+                terrainDef.tags.Add("Panaquatic_saltwater_terrain_tag");
             }
         }
         
@@ -25,12 +25,12 @@ public class GivePlantTags
         foreach (ThingDef plantDef in DefDatabase<ThingDef>.AllDefs.Where(def => def.category == ThingCategory.Plant))
         {
             //skips over all plants which never had any aquatic agriculture tags in the first place
-            if (!plantDef.plant.sowTags.Contains("RT_Saltwater") &&
+            if (!plantDef.plant.sowTags.Contains("Panaquatic_Zone") &&
                 !plantDef.plant.sowTags.Contains("Water") &&
                 !plantDef.plant.sowTags.Contains("VCE_Aquatic")) continue;
             
             //adds my sowTag because it simplifies checks
-            if (!plantDef.plant.sowTags.Contains("RT_Saltwater")) plantDef.plant.sowTags.Add("RT_Saltwater");
+            if (!plantDef.plant.sowTags.Contains("Panaquatic_Zone")) plantDef.plant.sowTags.Add("Panaquatic_Zone");
             
             //if plant has wild tags defined I don't mess with them;
             //plants with no wild tags are cultivars so there should be no danger
@@ -38,20 +38,20 @@ public class GivePlantTags
             {
                 if (!plantDef.HasModExtension<PlantPreferenceModExtension>())
                 {
-                    plantDef.plant.WildTerrainTags.Add("RT_Saltwater_freshwater_terrain_tag");
+                    plantDef.plant.WildTerrainTags.Add("Panaquatic_freshwater_terrain_tag");
                     continue;
                 }
 
                 HashSet<string> tagsToAdd = plantDef.GetModExtension<PlantPreferenceModExtension>().plantPreference switch
                 {
                     WaterPlantPreference.Freshwater =>
-                        ["RT_Saltwater_freshwater_terrain_tag"],
+                        ["Panaquatic_freshwater_terrain_tag"],
                     WaterPlantPreference.Saltwater =>
-                        ["RT_Saltwater_saltwater_terrain_tag"],
+                        ["Panaquatic_saltwater_terrain_tag"],
                     WaterPlantPreference.Either =>
-                        ["RT_Saltwater_freshwater_terrain_tag", "RT_Saltwater_saltwater_terrain_tag"],
+                        ["Panaquatic_freshwater_terrain_tag", "Panaquatic_saltwater_terrain_tag"],
                     _ =>
-                        ["RT_Saltwater_freshwater_terrain_tag"]
+                        ["Panaquatic_freshwater_terrain_tag"]
                 };
                 plantDef.plant.WildTerrainTags.AddRange(tagsToAdd);
             }

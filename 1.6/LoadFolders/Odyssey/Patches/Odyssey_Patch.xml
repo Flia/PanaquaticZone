@@ -3,7 +3,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Plant_Lotus"]/plant</xpath>
         <value>
-            <sowTags><li>RT_Saltwater</li></sowTags>
+            <sowTags><li>Panaquatic_Zone</li></sowTags>
         </value>
     </Operation>
 </Patch>

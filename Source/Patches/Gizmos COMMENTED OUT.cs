@@ -1,7 +1,7 @@
 /*using RimWorld;
 using Verse;
 
-namespace RT_Saltwater;
+namespace Panaquatic;
 
 [StaticConstructorOnStartup]
 public class Gizmos
@@ -9,7 +9,7 @@ public class Gizmos
     static Gizmos()
     {
         DefDatabase<DesignationCategoryDef>.GetNamed("Zone").specialDesignatorClasses
-            .Add(typeof(Designator_ZoneAdd_Saltwater));
+            .Add(typeof(Designator_ZoneAdd_Panaquatic));
         
 
         DefDatabase<DesignationCategoryDef>.GetNamed("Zone").specialDesignatorClasses

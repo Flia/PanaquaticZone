@@ -4,7 +4,7 @@
         <xpath>/Defs/DesignationCategoryDef[defName = "Zone"]/specialDesignatorClasses/li[text()="Designator_ZoneAdd_Growing"]</xpath>
         <order>Append</order>
         <value>
-            <li>RT_Saltwater.Designator_ZoneAdd_Saltwater</li>
+            <li>PanaquaticZone.Designator_ZoneAdd_Panaquatic</li>
         </value>
     </Operation>
 </Patch>

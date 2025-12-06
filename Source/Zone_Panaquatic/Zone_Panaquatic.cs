@@ -3,21 +3,21 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
-public class Zone_Saltwater : Zone_Growing
+public class Zone_Panaquatic : Zone_Growing
 {
     private static ThingDef defaultplant => SetDefaultPlant();
-    protected override Color NextZoneColor => SaltwaterZoneColorUtility.NextSaltwaterZoneColor();
+    protected override Color NextZoneColor => PanaquaticZoneColorUtility.NextPanaquaticZoneColor();
     
     //okay it IS needed but how, hell if I know
-    public Zone_Saltwater()
+    public Zone_Panaquatic()
     {
     }
 
-    public Zone_Saltwater(ZoneManager zoneManager) : base(zoneManager)
+    public Zone_Panaquatic(ZoneManager zoneManager) : base(zoneManager)
     {
-        label = "RT_Saltwater_SaltwaterZone".Translate();
+        label = "Panaquatic_PanaquaticZone".Translate();
         SetPlantDefToGrow(defaultplant);
     }
 
@@ -40,6 +40,6 @@ public class Zone_Saltwater : Zone_Growing
     
     public override IEnumerable<Gizmo> GetZoneAddGizmos()
     {
-        yield return DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Saltwater_Expand>();
+        yield return DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Panaquatic_Expand>();
     }
 }

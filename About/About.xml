@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <name>royallyTipsy's Saltwater Growing Zone</name>
+    <name>Unified Panaquatic Growing Zone</name>
     <author>royallyTipsy</author>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <packageId>royallyTipsy.Saltwater</packageId>
+    <packageId>royallyTipsy.PanaquaticZone</packageId>
     <description>I will add something.</description>
     <modDependencies>
         <li>

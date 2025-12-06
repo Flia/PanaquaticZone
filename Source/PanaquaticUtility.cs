@@ -2,9 +2,9 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
-public static class SaltwaterUtility
+public static class PanaquaticUtility
 {
     public static bool CanPlantAt(ThingDef plantDef, IPlantToGrowSettable settable)
     {
@@ -29,7 +29,7 @@ public static class SaltwaterUtility
         {
             if (!plantTags.Overlaps(cell.GetTerrain(settable.Map).tags.OrElseEmptyEnumerable()))
             {
-                Messages.Message("RT_Saltwater_WarnPreferenceMismatch".Translate(plantDef.label),
+                Messages.Message("Panaquatic_WarnPreferenceMismatch".Translate(plantDef.label),
                     MessageTypeDefOf.RejectInput, false);
                 return;
             }

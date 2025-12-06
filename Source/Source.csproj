@@ -3,8 +3,8 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFramework>net48</TargetFramework>
-        <RootNamespace>RT_Saltwater</RootNamespace>
-        <AssemblyName>RT_Saltwater</AssemblyName>
+        <RootNamespace>PanaquaticZone</RootNamespace>
+        <AssemblyName>PanaquaticZone</AssemblyName>
         <TargetFramework>net48</TargetFramework>
         <LangVersion>latestmajor</LangVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

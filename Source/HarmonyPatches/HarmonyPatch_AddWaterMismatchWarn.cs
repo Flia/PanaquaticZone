@@ -3,7 +3,7 @@ using HarmonyLib;
 using Verse;
 using RimWorld;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
 [HarmonyPatch]
 public static class HarmonyPatch_AddWaterMismatchWarnTo_WarnAsAppropriate
@@ -18,9 +18,9 @@ public static class HarmonyPatch_AddWaterMismatchWarnTo_WarnAsAppropriate
     [HarmonyPostfix]
     public static void Postfix(ThingDef plantDef, IPlantToGrowSettable ___settable)
     {
-        if (___settable is Zone_Saltwater)
+        if (___settable is Zone_Panaquatic)
         {
-            SaltwaterUtility.WarnIfPreferenceMismatch(plantDef, ___settable);
+            PanaquaticUtility.WarnIfPreferenceMismatch(plantDef, ___settable);
         }
     }
 }

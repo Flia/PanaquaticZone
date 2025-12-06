@@ -1,9 +1,9 @@
 using UnityEngine;
 using Verse;
 
-namespace RT_Saltwater;
+namespace PanaquaticZone;
 
-public class RT_Saltwater_Settings : ModSettings
+public class Panaquatic_Settings : ModSettings
 {
     public static bool MarineAgriculture = true;
     public static bool IndustrialRunoffToo = false;
@@ -19,29 +19,31 @@ public class RT_Saltwater_Settings : ModSettings
     {
         Listing_Standard listingStandard = new Listing_Standard();
         listingStandard.Begin(inRect);
-        listingStandard.CheckboxLabeled("RT_Saltwater_MarineAgricultureLabel".Translate(), ref MarineAgriculture, "RT_Saltwater_MarineAgricultureTooltip".Translate());
-        listingStandard.CheckboxLabeled("RT_Saltwater_IndustrialRunoffTooLabel".Translate(), ref IndustrialRunoffToo, "RT_Saltwater_IndustrialRunoffTooTooltip".Translate());
+        listingStandard.CheckboxLabeled("Panaquatic_MarineAgricultureLabel".Translate(), ref MarineAgriculture,
+            "Panaquatic_MarineAgricultureTooltip".Translate());
+        listingStandard.CheckboxLabeled("Panaquatic_IndustrialRunoffTooLabel".Translate(), ref IndustrialRunoffToo,
+            "Panaquatic_IndustrialRunoffTooTooltip".Translate());
         listingStandard.End();
     }
 }
 
-public class RT_Saltwater : Mod
+public class Panaquatic : Mod
 {
-    private readonly RT_Saltwater_Settings settings;
+    private readonly Panaquatic_Settings settings;
 
-    public RT_Saltwater(ModContentPack content) : base(content)
+    public Panaquatic(ModContentPack content) : base(content)
     {
-        settings = GetSettings<RT_Saltwater_Settings>();
+        settings = GetSettings<Panaquatic_Settings>();
     }
 
     public override void DoSettingsWindowContents(Rect inRect)
     {
         base.DoSettingsWindowContents(inRect);
-        RT_Saltwater_Settings.DoSettingsWindowContents(inRect);
+        Panaquatic_Settings.DoSettingsWindowContents(inRect);
     }
 
     public override string SettingsCategory()
     {
-        return "RT_Saltwater_Settings".Translate();
+        return "Panaquatic_Settings".Translate();
     }
 }

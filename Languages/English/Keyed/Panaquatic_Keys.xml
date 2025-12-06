@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Panaquatic_PanaquaticZone>Saltwater Growing Zone</Panaquatic_PanaquaticZone>
+    <Panaquatic_PanaquaticZone_description>Allows to grow Merren specialties of fibrekelp and quackweed. They are hardy enough to grow in saltwater.</Panaquatic_PanaquaticZone_description>
+    <Panaquatic_Settings>royallyTipsy's Saltwater Growing Zone</Panaquatic_Settings>
+    <Panaquatic_MarineAgricultureLabel>Allows the zone to cover ocean tiles</Panaquatic_MarineAgricultureLabel>
+    <Panaquatic_MarineAgricultureTooltip>On by default. No idea how well ocean water is tagged in other mods, so if you turn it off it may not always work.</Panaquatic_MarineAgricultureTooltip>
+    <Panaquatic_IndustrialRunoffTooLabel>Allows the zone to cover polluted tiles</Panaquatic_IndustrialRunoffTooLabel>
+    <Panaquatic_IndustrialRunoffTooTooltip>Off by default. Excluded for convenience: I'm yet to see a mod with cultivated plants which grow in polluted water. Perhaps I don't play enough mods. Report if you see something fun here, alright?</Panaquatic_IndustrialRunoffTooTooltip>
+    <Panaquatic_WarnPreferenceMismatch>{0} will not be sown in the entire zone because of water preference mismatch</Panaquatic_WarnPreferenceMismatch>
+</LanguageData>
