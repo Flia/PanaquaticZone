@@ -2,6 +2,7 @@
 <LanguageData>
     <Panaquatic_PanaquaticZone>Panaquatic growing zone</Panaquatic_PanaquaticZone>
     <Panaquatic_PanaquaticZone_description>Create a zone where colonists will try to grow aquatic plants. This zone can be placed over both fresh and salty water, unless changed in mod settings.</Panaquatic_PanaquaticZone_description>
+    
     <Panaquatic_Settings>Unified Panaquatic Growing Zone</Panaquatic_Settings>
     <Panaquatic_MarineAgricultureLabel>Allows to place the zone over ocean tiles</Panaquatic_MarineAgricultureLabel>
     <Panaquatic_MarineAgricultureTooltip>On by default. You probably want this off if you aren't using Merren though.</Panaquatic_MarineAgricultureTooltip>
