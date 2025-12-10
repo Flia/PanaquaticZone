@@ -1,7 +1,7 @@
 Issue tracker:
-- package ID. Need my own name too lol
-- preview.png
-- screenshots
+- maybe use less thick contour for lotus in icon
+- screenshots?
+- cultivars for biosphere maybe
 
 Backburner:
 - check if any water-exclusive trees will work

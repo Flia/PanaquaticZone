@@ -7,13 +7,13 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
         <value>
-            <li Class="PanaquaticZone.PlantPreferenceModExtension">
+            <li Class="PanaquaticZone.PlantSalinityPreference">
                 <plantPreference>Either</plantPreference>
             </li>
         </value>
     </Operation>
 
-    <Operation Class="PatchOPerationConditional">
+    <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae" and @AttributeName="MayRequire"]</xpath>
         <match Class="PatchOperationAttributeRemove">
             <xpath>Defs/ThingDef[defName="Stagz_RawDarkAlgae"]</xpath>

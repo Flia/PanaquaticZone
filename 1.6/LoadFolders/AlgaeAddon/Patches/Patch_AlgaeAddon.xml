@@ -3,7 +3,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]</xpath>
         <value>
-            <li Class="PanaquaticZone.PlantPreferenceModExtension">
+            <li Class="PanaquaticZone.PlantSalinityPreference">
                 <plantPreference>Either</plantPreference>
             </li>
         </value>

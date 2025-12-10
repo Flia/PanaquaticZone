@@ -19,8 +19,8 @@ public static class PanaquaticUtility
     //should I also make it check for polluted water?
     public static void WarnIfPreferenceMismatch(ThingDef plantDef, IPlantToGrowSettable settable)
     {
-        if (plantDef.HasModExtension<PlantPreferenceModExtension>() &&
-            plantDef.GetModExtension<PlantPreferenceModExtension>().plantPreference ==
+        if (plantDef.HasModExtension<PlantSalinityPreference>() &&
+            plantDef.GetModExtension<PlantSalinityPreference>().plantPreference ==
             WaterPlantPreference.Either) return;
 
         var plantTags = plantDef.plant.WildTerrainTags;
