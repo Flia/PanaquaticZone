@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using Verse;
 
 namespace PanaquaticZone;
@@ -9,7 +10,7 @@ public class GivePlantTags
 {
     static GivePlantTags()
     {
-        //adds a terrain tag corresponding to terrainDef's waterbody type, since plants can't use waterbody directly
+        //adds a terrain tag corresponding to terrainDef's waterbody type, since plants don't use waterbody directly
         foreach (TerrainDef terrainDef in DefDatabase<TerrainDef>.AllDefs.Where(def => def.tags != null && def.tags.Contains("Water")))
         {
             if (terrainDef.waterBodyType == WaterBodyType.Freshwater)
@@ -29,32 +30,45 @@ public class GivePlantTags
                 !plantDef.plant.sowTags.Contains("Water") &&
                 !plantDef.plant.sowTags.Contains("VCE_Aquatic")) continue;
             
-            //adds my sowTag because it simplifies checks
+            //adds my sowTag if absent because it simplifies checks
             if (!plantDef.plant.sowTags.Contains("Panaquatic_Zone")) plantDef.plant.sowTags.Add("Panaquatic_Zone");
             
-            //if plant has wild tags defined I don't mess with them;
-            //plants with no wild tags are cultivars so there should be no danger
-            if (plantDef.plant.wildTerrainTags == null || plantDef.plant.wildTerrainTags.Count == 0)
+            //if plant has wild tags defined it gets WildTagged but otherwise isn't messed with
+            /*Log.Message("Found water plant: " + plantDef.defName);
+            if (plantDef.plant.wildTerrainTags != null)
             {
-                if (!plantDef.HasModExtension<PlantPreferenceModExtension>())
+                if (plantDef.HasModExtension<PlantSalinityPreference>())
                 {
-                    plantDef.plant.WildTerrainTags.Add("Panaquatic_freshwater_terrain_tag");
-                    continue;
+                    plantDef.GetModExtension<PlantSalinityPreference>().plantPreference = WaterPlantPreference.WildTagged;
                 }
-
-                HashSet<string> tagsToAdd = plantDef.GetModExtension<PlantPreferenceModExtension>().plantPreference switch
+                else
                 {
-                    WaterPlantPreference.Freshwater =>
-                        ["Panaquatic_freshwater_terrain_tag"],
-                    WaterPlantPreference.Saltwater =>
-                        ["Panaquatic_saltwater_terrain_tag"],
-                    WaterPlantPreference.Either =>
-                        ["Panaquatic_freshwater_terrain_tag", "Panaquatic_saltwater_terrain_tag"],
-                    _ =>
-                        ["Panaquatic_freshwater_terrain_tag"]
-                };
-                plantDef.plant.WildTerrainTags.AddRange(tagsToAdd);
+                    plantDef.modExtensions.Add(new PlantSalinityPreference(WaterPlantPreference.WildTagged));
+                }
+                Log.Message("given wild tag");
+                continue;
+            }*/
+            
+            //plants with no wild tags (cultivars) get appropriate terrain tags
+            if (!plantDef.HasModExtension<PlantSalinityPreference>())
+            {
+                plantDef.modExtensions.Add(new PlantSalinityPreference(WaterPlantPreference.Freshwater));
+                Log.Message("given automatic freshwater tag");
             }
+
+            HashSet<string> tagsToAdd = plantDef.GetModExtension<PlantSalinityPreference>().plantPreference switch
+            {
+                WaterPlantPreference.Freshwater =>
+                    ["Panaquatic_freshwater_terrain_tag"],
+                WaterPlantPreference.Saltwater =>
+                    ["Panaquatic_saltwater_terrain_tag"],
+                WaterPlantPreference.Either =>
+                    ["Panaquatic_freshwater_terrain_tag", "Panaquatic_saltwater_terrain_tag"],
+                _ =>
+                    ["Panaquatic_freshwater_terrain_tag"]
+            };
+            Log.Message(plantDef.GetModExtension<PlantSalinityPreference>().plantPreference.ToString());
+            plantDef.plant.WildTerrainTags.AddRange(tagsToAdd);
         }
     }
 }

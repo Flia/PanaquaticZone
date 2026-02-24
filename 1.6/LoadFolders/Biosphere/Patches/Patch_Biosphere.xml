@@ -3,4 +3,8 @@
     <Operation Class="PatchOperationRemove">
         <xpath>/Defs/DesignationCategoryDef[defName = "Zone"]/specialDesignatorClasses/li[text()="LTSBiosphere.Zones.Designator_ZoneAdd_Aquatic"]</xpath>
     </Operation>
+
+    <Operation Class="PatchOperationRemove">
+        <xpath>/Defs/ThingDef[defName = "LTS_Plant_Mistveil"]/plant/sowTags</xpath>
+    </Operation>
 </Patch>

@@ -1,4 +1,5 @@
 Issue tracker:
+- check if works without odyssey
 - maybe use less thick contour for lotus in icon
 - screenshots?
 - cultivars for biosphere maybe

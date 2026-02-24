@@ -4,7 +4,14 @@ namespace PanaquaticZone;
 
 public class PlantSalinityPreference : DefModExtension
 { 
-    public WaterPlantPreference plantPreference; 
+    public WaterPlantPreference plantPreference;
+
+    public PlantSalinityPreference() {}
+
+    public PlantSalinityPreference(WaterPlantPreference plantPreference)
+    {
+        this.plantPreference = plantPreference;
+    }
 }
 
 public enum WaterPlantPreference

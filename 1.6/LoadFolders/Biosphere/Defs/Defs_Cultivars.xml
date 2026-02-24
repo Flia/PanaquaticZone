@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="LTS_Plant_Mangrove">
+        <defName>Panaquatic_Plant_Mangrove</defName>
+        <plant>
+            <wildTerrainTags Inherit="False" />
+            <sowTags>
+                <li>Panaquatic_Zone</li>
+            </sowTags>
+        </plant>
+        <modExtensions>
+            <li Class="PanaquaticZone.PlantSalinityPreference">
+                <plantPreference>Either</plantPreference>
+            </li>
+        </modExtensions>
+    </ThingDef>
+    <!--LTS_Plant_Mistveil-->
+    
+</Defs>
