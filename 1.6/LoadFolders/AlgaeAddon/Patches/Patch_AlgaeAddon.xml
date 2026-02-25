@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]/plant/sowTags</xpath>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]</xpath>
         <value>
-            <li>Panaquatic_Zone</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]/plant/wildTerrainTags</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]/plant</xpath>
-            <value>
-                <wildTerrainTags />
-            </value>
-        </nomatch>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]/plant/wildTerrainTags</xpath>
-        <value>
-            <li>Panaquatic_freshwater_terrain_tag</li>
-            <li>Panaquatic_saltwater_terrain_tag</li>
+            <li Class="PanaquaticZone.ModExtension_PlantSalinityPreference">
+                <plantPreference>Either</plantPreference>
+            </li>
         </value>
     </Operation>
 </Patch>

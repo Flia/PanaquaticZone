@@ -4,52 +4,12 @@
         <xpath>/Defs/DesignationCategoryDef[defName = "Zone"]/specialDesignatorClasses/li[text()="VanillaPlantsExpandedMorePlants.Designator_AquaticGrowingZone"]</xpath>
     </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="VCE_Taro" or defName="VCE_Watercress" or defName="VCE_Lotus" or defName="VCE_WaterChestnut"]/plant/sowTags</xpath>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/ThingDef[defName="VCE_Taro" or defName="VCE_Watercress" or defName="VCE_Lotus" or defName="VCE_WaterChestnut"]</xpath>
         <value>
-            <li>Panaquatic_Zone</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="VCE_Taro"]/plant/wildTerrainTags</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="VCE_Taro"]/plant</xpath>
-            <value>
-                <wildTerrainTags />
-            </value>
-        </nomatch>
-    </Operation>
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="VCE_Watercress"]/plant/wildTerrainTags</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="VCE_Watercress"]/plant</xpath>
-            <value>
-                <wildTerrainTags />
-            </value>
-        </nomatch>
-    </Operation>
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="VCE_Lotus"]/plant/wildTerrainTags</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="VCE_Lotus"]/plant</xpath>
-            <value>
-                <wildTerrainTags />
-            </value>
-        </nomatch>
-    </Operation>
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="VCE_WaterChestnut"]/plant/wildTerrainTags</xpath>
-        <nomatch Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="VCE_WaterChestnut"]/plant</xpath>
-            <value>
-                <wildTerrainTags />
-            </value>
-        </nomatch>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="VCE_Taro" or defName="VCE_Watercress" or defName="VCE_Lotus" or defName="VCE_WaterChestnut"]/plant/wildTerrainTags</xpath>
-        <value>
-            <li>Panaquatic_freshwater_terrain_tag</li>
+            <li Class="PanaquaticZone.ModExtension_PlantSalinityPreference">
+                <plantPreference>Freshwater</plantPreference>
+            </li>
         </value>
     </Operation>
 </Patch>
