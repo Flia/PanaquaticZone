@@ -4,7 +4,34 @@
         <xpath>/Defs/DesignationCategoryDef[defName = "Zone"]/specialDesignatorClasses/li[text()="LTSBiosphere.Zones.Designator_ZoneAdd_Aquatic"]</xpath>
     </Operation>
 
-    <Operation Class="PatchOperationRemove">
-        <xpath>/Defs/ThingDef[defName = "LTS_Plant_Mistveil"]/plant/sowTags</xpath>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="LTS_Plant_Aquaflume" or defName="LTS_Plant_Cattail" or defName="LTS_Plant_Goblet" or defName="LTS_Plant_RedRice" or defName="LTS_Plant_Mistveil"]/plant/sowTags</xpath>
+        <value>
+            <li>Panaquatic_Zone</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="LTS_Plant_RedRice"]/plant/wildTerrainTags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="LTS_Plant_RedRice"]/plant</xpath>
+            <value>
+                <wildTerrainTags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="LTS_Plant_Mistveil"]/plant/wildTerrainTags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="LTS_Plant_Mistveil"]/plant</xpath>
+            <value>
+                <wildTerrainTags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="LTS_Plant_RedRice" or defName="LTS_Plant_Mistveil"]/plant/wildTerrainTags</xpath>
+        <value>
+            <li>Panaquatic_freshwater_terrain_tag</li>
+        </value>
     </Operation>
 </Patch>

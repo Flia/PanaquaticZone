@@ -4,7 +4,7 @@
     <Panaquatic_PanaquaticZone_description>Create a zone where colonists will try to grow aquatic plants. This zone can be placed over both fresh and salty water, unless changed in mod settings.</Panaquatic_PanaquaticZone_description>
     
     <Panaquatic_SalinityStat>Water preference</Panaquatic_SalinityStat>
-    <Panaquatic_SalinityStat_Desc> ---PLACEHOLDER--- </Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_Desc>Type of water this plant will grow in. It can be freshwater, saltwater, freshwater and saltwater, or same as in the wild.</Panaquatic_SalinityStat_Desc>
     <Panaquatic_FreshwaterPreference>Freshwater</Panaquatic_FreshwaterPreference>
     <Panaquatic_SaltwaterPreference>Saltwater</Panaquatic_SaltwaterPreference>
     <Panaquatic_EitherPreference>Freshwater and saltwater</Panaquatic_EitherPreference>
@@ -15,5 +15,5 @@
     <Panaquatic_MarineAgricultureTooltip>On by default. You probably want this off if you aren't using Merren though.</Panaquatic_MarineAgricultureTooltip>
     <Panaquatic_IndustrialRunoffTooLabel>Allows to place the zone over polluted tiles</Panaquatic_IndustrialRunoffTooLabel>
     <Panaquatic_IndustrialRunoffTooTooltip>Off by default. Excluded for convenience: I'm yet to see a mod with cultivated plants which grow in polluted water. Perhaps I don't play enough mods. Report if you see something fun here, alright?</Panaquatic_IndustrialRunoffTooTooltip>
-    <Panaquatic_WarnPreferenceMismatch>{0} will not be sown in the entire zone because of water preference mismatch</Panaquatic_WarnPreferenceMismatch>
+    <Panaquatic_WarnPreferenceMismatch>{0} will not be sown throughout the entire zone because of water preference mismatch</Panaquatic_WarnPreferenceMismatch>
 </LanguageData>

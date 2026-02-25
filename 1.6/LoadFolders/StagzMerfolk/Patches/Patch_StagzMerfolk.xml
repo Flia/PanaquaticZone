@@ -4,12 +4,36 @@
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
         <attribute>MayRequire</attribute>
     </Operation>
-    <Operation Class="PatchOperationAddModExtension">
-        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]/plant/sowTags</xpath>
         <value>
-            <li Class="PanaquaticZone.PlantSalinityPreference">
-                <plantPreference>Either</plantPreference>
-            </li>
+            <li>Panaquatic_Zone</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]/plant/wildTerrainTags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Stagz_WoodKelp"]/plant</xpath>
+            <value>
+                <wildTerrainTags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]/plant/wildTerrainTags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Stagz_DarkAlgae"]/plant</xpath>
+            <value>
+                <wildTerrainTags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]/plant/wildTerrainTags</xpath>
+        <value>
+            <li>Panaquatic_freshwater_terrain_tag</li>
+            <li>Panaquatic_saltwater_terrain_tag</li>
         </value>
     </Operation>
 

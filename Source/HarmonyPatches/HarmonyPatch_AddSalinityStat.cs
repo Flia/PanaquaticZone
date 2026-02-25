@@ -1,32 +1,31 @@
-/*using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using Verse;
 
 namespace PanaquaticZone;
 
-[HarmonyPatch(typeof(ThingDef),"SpecialDisplayStats")]
+[HarmonyPatch(typeof(PlantProperties),"SpecialDisplayStats")]
 public class HarmonyPatch_AddSalinityStat
 {
-    public static void Postfix(ref StatRequest req, ref IEnumerable<StatDrawEntry> __result, ThingDef ___instance)
+    private static IEnumerable<StatDrawEntry> Postfix(IEnumerable<StatDrawEntry> __result, PlantProperties __instance)
     {
-        if (___instance.plant != null && ___instance.plant.sowTags.Contains("Panaquatic_Zone"))
+        if (__instance.sowTags.Contains("Panaquatic_Zone"))
         {
-            WaterPlantPreference plantPreferenceRaw = ___instance.GetModExtension<PlantSalinityPreference>().plantPreference;
+            WaterPlantPreference plantPreferenceRaw = PanaquaticUtility.getWaterPlantPreference(__instance);
             
-            string plantPreferenceString =
-                ___instance.GetModExtension<PlantSalinityPreference>().plantPreference == WaterPlantPreference.WildTagged
-                    ? $"Panaquatic_{plantPreferenceRaw}Preference".Translate() + " (" +
-                      string.Join(", ", ___instance.plant.WildTerrainTags) + ")"
-                    : $"Panaquatic_{plantPreferenceRaw}Preference".Translate();
+            string plantPreferenceString = plantPreferenceRaw == WaterPlantPreference.WildTagged
+                ? $"Panaquatic_{plantPreferenceRaw}Preference".Translate() + " (" + string.Join(", ", __instance.WildTerrainTags) + ")"
+                : $"Panaquatic_{plantPreferenceRaw}Preference".Translate();
             
-            __result = __result.Append(new StatDrawEntry(
+            var statEntry = new StatDrawEntry(
                 StatCategoryDefOf.Basics,
                 "Panaquatic_SalinityStat".Translate(), 
                 plantPreferenceString,
-                "Panaquatic_SalinityStat_Desc".Translate(), //has placeholder language key
-                4157));
+                "Panaquatic_SalinityStat_Desc".Translate(),
+                4157);
+            return __result.Concat(statEntry);
         }
+        return __result;
     }
-}*/
+}

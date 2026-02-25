@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Plant_Lotus"]/plant/sowTags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Plant_Lotus"]/plant</xpath>
+            <value>
+                <sowTags />
+            </value>
+        </nomatch>
+    </Operation>
     <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Plant_Lotus"]/plant</xpath>
+        <xpath>Defs/ThingDef[defName="Plant_Lotus"]/plant/sowTags</xpath>
         <value>
-            <sowTags><li>Panaquatic_Zone</li></sowTags>
+            <li>Panaquatic_Zone</li>
         </value>
     </Operation>
 </Patch>

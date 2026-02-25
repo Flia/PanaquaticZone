@@ -1,8 +1,6 @@
 Issue tracker:
-- check if works without odyssey
-- maybe use less thick contour for lotus in icon
 - screenshots?
-- cultivars for biosphere maybe
+- cultivars for biosphere maybe - might be better as separate patch
 
 Backburner:
 - check if any water-exclusive trees will work
@@ -14,5 +12,5 @@ Backburner:
 
 Ideas:
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation
-- preference mismatch warning should maybe tell the preference
+
 

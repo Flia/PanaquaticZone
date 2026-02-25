@@ -19,9 +19,7 @@ public static class PanaquaticUtility
     //should I also make it check for polluted water?
     public static void WarnIfPreferenceMismatch(ThingDef plantDef, IPlantToGrowSettable settable)
     {
-        if (plantDef.HasModExtension<PlantSalinityPreference>() &&
-            plantDef.GetModExtension<PlantSalinityPreference>().plantPreference ==
-            WaterPlantPreference.Either) return;
+        if (getWaterPlantPreference(plantDef) == WaterPlantPreference.Either) return;
 
         var plantTags = plantDef.plant.WildTerrainTags;
 
@@ -35,4 +33,34 @@ public static class PanaquaticUtility
             }
         }
     }
+
+    public static WaterPlantPreference getWaterPlantPreference(ThingDef plantDef)
+    {
+        return getWaterPlantPreference(plantDef.plant);
+    }
+
+    public static WaterPlantPreference getWaterPlantPreference(PlantProperties plant)
+    {
+        if (!plant.sowTags.Contains("Panaquatic_Zone"))
+            return WaterPlantPreference.None;
+        if (plant.WildTerrainTags.Contains("Panaquatic_freshwater_terrain_tag") &&
+            plant.WildTerrainTags.Contains("Panaquatic_saltwater_terrain_tag"))
+            return WaterPlantPreference.Either;
+        if (plant.WildTerrainTags.Contains("Panaquatic_freshwater_terrain_tag"))
+            return WaterPlantPreference.Freshwater;
+        if (plant.WildTerrainTags.Contains("Panaquatic_saltwater_terrain_tag"))
+            return WaterPlantPreference.Saltwater;
+        if (plant.WildTerrainTags != null && plant.WildTerrainTags.Count > 0)
+            return WaterPlantPreference.WildTagged;
+        return WaterPlantPreference.None;
+    }
+}
+
+public enum WaterPlantPreference
+{
+    Freshwater = 0,
+    Saltwater,
+    Either,
+    WildTagged,
+    None
 }
