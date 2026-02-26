@@ -4,7 +4,7 @@
         <xpath>Defs/ThingDef[defName="AC_AlgaeCrop"]</xpath>
         <value>
             <li Class="PanaquaticZone.ModExtension_PlantSalinityPreference">
-                <plantPreference>Either</plantPreference>
+                <plantPreference>Euryhaline</plantPreference>
             </li>
         </value>
     </Operation>

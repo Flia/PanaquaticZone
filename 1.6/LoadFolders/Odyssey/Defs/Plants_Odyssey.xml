@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="PlantOdysseyLotus">
+        <defName>Plant_Lotus_Cultivated</defName>
+        <label>decorative lotus</label>
+        <plant>
+            <wildTerrainTags Inherit="False"/>
+        </plant>
+        <modExtensions>
+            <li Class="PanaquaticZone.ModExtension_PlantSalinityPreference">
+                <plantPreference>Freshwater</plantPreference>
+            </li>
+        </modExtensions>
+    </ThingDef>
+</Defs>

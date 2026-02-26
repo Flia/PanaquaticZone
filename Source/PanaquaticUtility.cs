@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -6,6 +7,11 @@ namespace PanaquaticZone;
 
 public static class PanaquaticUtility
 {
+    public static string freshwaterTilesStatDisplayCache;
+    public static string saltwaterTilesStatDisplayCache;
+    public static readonly HashSet<TerrainDef> allAcceptableWaterTilesTracker = [];
+    public static readonly Dictionary<PlantProperties, string> wildTaggedTilesCacheDictionary = [];
+
     public static bool CanPlantAt(ThingDef plantDef, IPlantToGrowSettable settable)
     {
         var plantTags = plantDef.plant.WildTerrainTags;
@@ -19,7 +25,7 @@ public static class PanaquaticUtility
     //should I also make it check for polluted water?
     public static void WarnIfPreferenceMismatch(ThingDef plantDef, IPlantToGrowSettable settable)
     {
-        if (getWaterPlantPreference(plantDef) == WaterPlantPreference.Either) return;
+        if (getWaterPlantPreference(plantDef) == WaterPlantPreference.Euryhaline) return;
 
         var plantTags = plantDef.plant.WildTerrainTags;
 
@@ -45,7 +51,7 @@ public static class PanaquaticUtility
             return WaterPlantPreference.None;
         if (plant.WildTerrainTags.Contains("Panaquatic_freshwater_terrain_tag") &&
             plant.WildTerrainTags.Contains("Panaquatic_saltwater_terrain_tag"))
-            return WaterPlantPreference.Either;
+            return WaterPlantPreference.Euryhaline;
         if (plant.WildTerrainTags.Contains("Panaquatic_freshwater_terrain_tag"))
             return WaterPlantPreference.Freshwater;
         if (plant.WildTerrainTags.Contains("Panaquatic_saltwater_terrain_tag"))
@@ -60,7 +66,7 @@ public enum WaterPlantPreference
 {
     Freshwater = 0,
     Saltwater,
-    Either,
+    Euryhaline,
     WildTagged,
     None
 }

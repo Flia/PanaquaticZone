@@ -1,16 +1,16 @@
 Issue tracker:
 - screenshots?
-- cultivars for biosphere maybe - might be better as separate patch
-
+- showing a question mark for "no available plants" is also a solution if I can make it work
+ 
 Backburner:
 - check if any water-exclusive trees will work
 - stupid cypress damn it to hell
  - has vanilla problem of not being sown in Growing Zones. It appears to be a weird interaction with its wildTerrainTags.
 - a custom default plant that can grow anywhere would solve some clunkiness - something purely decorative most likely
  - update designator icon if ever end up doing it
-- showing a question mark for "no available plants" is also a solution if I can make it work
 
 Ideas:
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation
+- "see also other useful methods in GenText: ToCommaListOr, ToLineList, ToSpaceList, ToTitleCaseSmart, all the ToString[Type] methods, and the kinda niche but surprisingly useful Shorten"
 
 

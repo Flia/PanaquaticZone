@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Panaquatic_PanaquaticZone>Водные посадки</Panaquatic_PanaquaticZone>
+    <Panaquatic_PanaquaticZone_description>Создать зону где ваши поселенцы будут выращивать определенный тип водных растений. Эту область можно разместить и на пресноводных и на морских клетках, в зависимости от настроек мода.</Panaquatic_PanaquaticZone_description>
+
+    <Panaquatic_SalinityStat>Предпочтения к воде</Panaquatic_SalinityStat>
+    <Panaquatic_SalinityStat_Desc>Допустимая соленость воды в котором это растение может расти. Растение может быть пресноводным, солоноводным, эвригалинным, или же расти только там же, где и в дикой природе.\n\nПресноводные растения могут расти на такой местности: {0}.\n\nСолоноводные растения могут расти на такой местности: {1}.\n\nЭвригалинные могут расти везде где растут пресноводные или солоноводные растения.</Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_DescWildTagged>Это дикое растение и оно будет расти только на такой местности:</Panaquatic_SalinityStat_DescWildTagged>
+
+    <Panaquatic_FreshwaterPreference>Пресноводное</Panaquatic_FreshwaterPreference>
+    <Panaquatic_SaltwaterPreference>Солоноводное</Panaquatic_SaltwaterPreference>
+    <Panaquatic_EuryhalinePreference>Эвригалинное</Panaquatic_EuryhalinePreference>
+    <Panaquatic_WildTaggedPreference>То же что и в дикой природе</Panaquatic_WildTaggedPreference>
+
+    <Panaquatic_Settings>Unified Panaquatic Growing Zone</Panaquatic_Settings>
+    <Panaquatic_MarineAgricultureLabel>Разрешить область на морских клетках</Panaquatic_MarineAgricultureLabel>
+    <Panaquatic_MarineAgricultureTooltip>По умолчанию включено. Но наверняка хорошая идея выключить если у вас нет модов с морскими растениями.</Panaquatic_MarineAgricultureTooltip>
+    <Panaquatic_IndustrialRunoffTooLabel>Разрешить область на загрязнённых клетках</Panaquatic_IndustrialRunoffTooLabel>
+    <Panaquatic_IndustrialRunoffTooTooltip>По умолчанию выключено. Для удобства: я пока еще не встретила мода где было бы водное растение которое можно было бы сажать на грязных клетках. Возможно я знаю мало модов. Может отпишетесь если что-то найдете?</Panaquatic_IndustrialRunoffTooTooltip>
+    <Panaquatic_WarnPreferenceMismatch>{0} нельзя высадить на всей зоне посадок из-за несоответствия предпочтения к солености воды</Panaquatic_WarnPreferenceMismatch>
+</LanguageData>

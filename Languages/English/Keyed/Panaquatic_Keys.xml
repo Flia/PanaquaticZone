@@ -4,15 +4,17 @@
     <Panaquatic_PanaquaticZone_description>Create a zone where colonists will try to grow aquatic plants. This zone can be placed over both fresh and salty water, unless changed in mod settings.</Panaquatic_PanaquaticZone_description>
     
     <Panaquatic_SalinityStat>Water preference</Panaquatic_SalinityStat>
-    <Panaquatic_SalinityStat_Desc>Type of water this plant will grow in. It can be freshwater, saltwater, freshwater and saltwater, or same as in the wild.</Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_Desc>Water salinity required for this plant's growth. Plants can be freshwater, saltwater, euryhaline, or only grow in the same terrain as in the wild.\n\nFreshwater plants will grow in this terrain: {0}.\n\nSaltwater plants will grow in this terrain: {1}.\n\nEuryhaline plants will grow in any terrain where freshwater and saltwater plants can.</Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_DescWildTagged>This is a wild plant and will only be sown in this terrain:</Panaquatic_SalinityStat_DescWildTagged>
+    
     <Panaquatic_FreshwaterPreference>Freshwater</Panaquatic_FreshwaterPreference>
     <Panaquatic_SaltwaterPreference>Saltwater</Panaquatic_SaltwaterPreference>
-    <Panaquatic_EitherPreference>Freshwater and saltwater</Panaquatic_EitherPreference>
+    <Panaquatic_EuryhalinePreference>Euryhaline</Panaquatic_EuryhalinePreference>
     <Panaquatic_WildTaggedPreference>Same as in the wild</Panaquatic_WildTaggedPreference>
     
     <Panaquatic_Settings>Unified Panaquatic Growing Zone</Panaquatic_Settings>
     <Panaquatic_MarineAgricultureLabel>Allows to place the zone over ocean tiles</Panaquatic_MarineAgricultureLabel>
-    <Panaquatic_MarineAgricultureTooltip>On by default. You probably want this off if you aren't using Merren though.</Panaquatic_MarineAgricultureTooltip>
+    <Panaquatic_MarineAgricultureTooltip>On by default. Though, it'll be a good idea to turn this off if you aren't using any mods with saltwater plants.</Panaquatic_MarineAgricultureTooltip>
     <Panaquatic_IndustrialRunoffTooLabel>Allows to place the zone over polluted tiles</Panaquatic_IndustrialRunoffTooLabel>
     <Panaquatic_IndustrialRunoffTooTooltip>Off by default. Excluded for convenience: I'm yet to see a mod with cultivated plants which grow in polluted water. Perhaps I don't play enough mods. Report if you see something fun here, alright?</Panaquatic_IndustrialRunoffTooTooltip>
     <Panaquatic_WarnPreferenceMismatch>{0} will not be sown throughout the entire zone because of water preference mismatch</Panaquatic_WarnPreferenceMismatch>

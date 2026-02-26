@@ -9,7 +9,7 @@
         <xpath>Defs/ThingDef[defName="Stagz_WoodKelp" or defName="Stagz_DarkAlgae"]</xpath>
         <value>
             <li Class="PanaquaticZone.ModExtension_PlantSalinityPreference">
-                <plantPreference>Either</plantPreference>
+                <plantPreference>Euryhaline</plantPreference>
             </li>
         </value>
     </Operation>

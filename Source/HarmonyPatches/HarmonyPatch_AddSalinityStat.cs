@@ -13,16 +13,21 @@ public class HarmonyPatch_AddSalinityStat
         if (__instance.sowTags.Contains("Panaquatic_Zone"))
         {
             WaterPlantPreference plantPreferenceRaw = PanaquaticUtility.getWaterPlantPreference(__instance);
-            
-            string plantPreferenceString = plantPreferenceRaw == WaterPlantPreference.WildTagged
-                ? $"Panaquatic_{plantPreferenceRaw}Preference".Translate() + " (" + string.Join(", ", __instance.WildTerrainTags) + ")"
-                : $"Panaquatic_{plantPreferenceRaw}Preference".Translate();
-            
+
+            string SalinityDesc = "Panaquatic_SalinityStat_Desc".Translate([PanaquaticUtility.freshwaterTilesStatDisplayCache, PanaquaticUtility.saltwaterTilesStatDisplayCache]);
+            if (plantPreferenceRaw == WaterPlantPreference.WildTagged)
+            {
+                SalinityDesc += "\n\n"
+                                + "Panaquatic_SalinityStat_DescWildTagged".Translate().Colorize(ColoredText.TipSectionTitleColor).Trim()
+                                + " " 
+                                + PanaquaticUtility.wildTaggedTilesCacheDictionary[__instance].CapitalizeFirst().EndWithPeriod();
+            }
+                
             var statEntry = new StatDrawEntry(
                 StatCategoryDefOf.Basics,
                 "Panaquatic_SalinityStat".Translate(), 
-                plantPreferenceString,
-                "Panaquatic_SalinityStat_Desc".Translate(),
+                $"Panaquatic_{plantPreferenceRaw}Preference".Translate(),
+                SalinityDesc,
                 4157);
             return __result.Concat(statEntry);
         }
