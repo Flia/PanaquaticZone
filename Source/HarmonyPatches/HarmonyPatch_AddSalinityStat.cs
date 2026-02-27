@@ -18,9 +18,8 @@ public class HarmonyPatch_AddSalinityStat
             if (plantPreferenceRaw == WaterPlantPreference.WildTagged)
             {
                 SalinityDesc += "\n\n"
-                                + "Panaquatic_SalinityStat_DescWildTagged".Translate().Colorize(ColoredText.TipSectionTitleColor).Trim()
-                                + " " 
-                                + PanaquaticUtility.wildTaggedTilesCacheDictionary[__instance].CapitalizeFirst().EndWithPeriod();
+                                + "Panaquatic_SalinityStat_DescWildTagged".Translate().Colorize(ColoredText.TipSectionTitleColor)
+                                + PanaquaticUtility.wildTaggedTilesCacheDictionary[__instance];
             }
                 
             var statEntry = new StatDrawEntry(

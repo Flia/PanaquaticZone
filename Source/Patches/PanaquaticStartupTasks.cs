@@ -35,8 +35,8 @@ public static class PanaquaticStartupTasks
                     PanaquaticUtility.allAcceptableWaterTilesTracker.Add(terrainDef);
                 }
         }
-        PanaquaticUtility.freshwaterTilesStatDisplayCache = freshwaterTiles.ToCommaList(true);
-        PanaquaticUtility.saltwaterTilesStatDisplayCache = saltwaterTiles.ToCommaList(true);
+        PanaquaticUtility.freshwaterTilesStatDisplayCache = freshwaterTiles.ToLineList("- ");
+        PanaquaticUtility.saltwaterTilesStatDisplayCache = saltwaterTiles.ToLineList("- ");
     }
     
     //Gives all plants with my modExtension the sowTag and terrainTags
@@ -53,9 +53,9 @@ public static class PanaquaticStartupTasks
                 foreach (TerrainDef terrain in PanaquaticUtility.allAcceptableWaterTilesTracker)
                 {
                     if (plantDef.plant.WildTerrainTags.Overlaps(terrain.tags.OrElseEmptyEnumerable()))
-                        terrainDefsForPlant.Add(terrain.label);
+                        terrainDefsForPlant.Add(terrain.label.CapitalizeFirst());
                 } 
-                PanaquaticUtility.wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant.ToCommaList(true));
+                PanaquaticUtility.wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant.ToLineList("- "));
                 continue;
             }
             

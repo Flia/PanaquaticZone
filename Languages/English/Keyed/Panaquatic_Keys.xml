@@ -4,12 +4,12 @@
     <Panaquatic_PanaquaticZone_description>Create a zone where colonists will try to grow aquatic plants. This zone can be placed over both fresh and salty water, unless changed in mod settings.</Panaquatic_PanaquaticZone_description>
     
     <Panaquatic_SalinityStat>Water preference</Panaquatic_SalinityStat>
-    <Panaquatic_SalinityStat_Desc>Water salinity required for this plant's growth. Plants can be freshwater, saltwater, euryhaline, or only grow in the same terrain as in the wild.\n\nFreshwater plants will grow in this terrain: {0}.\n\nSaltwater plants will grow in this terrain: {1}.\n\nEuryhaline plants will grow in any terrain where freshwater and saltwater plants can.</Panaquatic_SalinityStat_Desc>
-    <Panaquatic_SalinityStat_DescWildTagged>This is a wild plant and will only be sown in this terrain:</Panaquatic_SalinityStat_DescWildTagged>
+    <Panaquatic_SalinityStat_Desc>Water salinity required for this plant's growth. Plants can be freshwater, saltwater, or both salt- and freshwater.\n\nFreshwater plants can grow in this terrain:\n{0}\n\nSaltwater plants can grow in this terrain:\n{1}</Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_DescWildTagged>This is a wild plant and will only be sown in this terrain:\n</Panaquatic_SalinityStat_DescWildTagged>
     
     <Panaquatic_FreshwaterPreference>Freshwater</Panaquatic_FreshwaterPreference>
     <Panaquatic_SaltwaterPreference>Saltwater</Panaquatic_SaltwaterPreference>
-    <Panaquatic_EuryhalinePreference>Euryhaline</Panaquatic_EuryhalinePreference>
+    <Panaquatic_EuryhalinePreference>Salt- and freshwater</Panaquatic_EuryhalinePreference>
     <Panaquatic_WildTaggedPreference>Same as in the wild</Panaquatic_WildTaggedPreference>
     
     <Panaquatic_Settings>Unified Panaquatic Growing Zone</Panaquatic_Settings>
