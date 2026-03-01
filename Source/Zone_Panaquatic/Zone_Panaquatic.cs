@@ -7,8 +7,28 @@ namespace PanaquaticZone;
 
 public class Zone_Panaquatic : Zone_Growing
 {
-    private static ThingDef defaultplant => SetDefaultPlant();
     protected override Color NextZoneColor => PanaquaticZoneColorUtility.NextPanaquaticZoneColor();
+    
+    //credit to Mashed's Ashlands for property/addcell block lmao, spent whole day on it before I looked at their code
+    //I still don't understand *precisely* why it works.
+    public new ThingDef PlantDefToGrow 
+    { 
+        get 
+        { 
+            if (base.PlantDefToGrow == ThingDefOf.Plant_Potato
+                || ModsConfig.BiotechActive && base.PlantDefToGrow == ThingDefOf.Plant_Toxipotato) 
+            {
+                SetPlantDefToGrow(GetDefaultPlant());
+            }
+            return base.PlantDefToGrow; 
+        }
+    }
+    public override void AddCell(IntVec3 c)
+    {
+        base.AddCell(c);
+        //"done here because otherwise SettableEntirelyPolluted returns true due to Cells being empty"
+        _ = PlantDefToGrow;
+    }
     
     //okay it IS needed but how, hell if I know
     public Zone_Panaquatic()
@@ -18,24 +38,13 @@ public class Zone_Panaquatic : Zone_Growing
     public Zone_Panaquatic(ZoneManager zoneManager) : base(zoneManager)
     {
         label = "Panaquatic_PanaquaticZone".Translate();
-        SetPlantDefToGrow(defaultplant);
     }
 
-    private static ThingDef SetDefaultPlant()
+    private ThingDef GetDefaultPlant()
     {
-        if (ModsConfig.IsActive("Arquebus.StagzMerfolk"))
-        {
-            return DefDatabase<ThingDef>.GetNamed("Stagz_DarkAlgae");
-        }
-        if (ModsConfig.IsActive("VanillaExpanded.VPlantsEMore"))
-        {
-            return DefDatabase<ThingDef>.GetNamed("VCE_Taro");
-        }
-        if (ModsConfig.IsActive("LimeTreeSnake.Biosphere"))
-        {
-            return DefDatabase<ThingDef>.GetNamed("LTS_Plant_RedRice");
-        }
-        return null; //TODO: maybe should throw an error or something
+        return !this.SettableEntirelySaltwater()
+            ? PanaquaticStartupTasks.defaultFreshwaterPlant
+            : PanaquaticStartupTasks.defaultSaltwaterPlant;
     }
     
     public override IEnumerable<Gizmo> GetZoneAddGizmos()

@@ -25,10 +25,11 @@ public class Designator_ZoneAdd_Panaquatic : Designator_ZoneAdd
 
     public override AcceptanceReport CanDesignateCell(IntVec3 c)
     {
-        if (!base.CanDesignateCell(c).Accepted || c.GetTerrain(Map).passability == Traversability.Impassable) return false;
-        if (!Panaquatic_Settings.IndustrialRunoffToo && c.IsPolluted(Map)) return false;
-        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater) return true;
-        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && Panaquatic_Settings.MarineAgriculture;
+        if (!base.CanDesignateCell(c).Accepted) return false;
+        if (c.GetTerrain(Map).passability == Traversability.Impassable) return false;
+        if (c.IsPolluted(Map)) return false;
+        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater && PanaquaticStartupTasks.AllowFreshwaterForZone) return true;
+        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && PanaquaticStartupTasks.AllowSaltwaterForZone;
     }
 
     public override void DesignateMultiCell(IEnumerable<IntVec3> cells)

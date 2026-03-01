@@ -14,12 +14,12 @@ public class HarmonyPatch_AddSalinityStat
         {
             WaterPlantPreference plantPreferenceRaw = PanaquaticUtility.getWaterPlantPreference(__instance);
 
-            string SalinityDesc = "Panaquatic_SalinityStat_Desc".Translate([PanaquaticUtility.freshwaterTilesStatDisplayCache, PanaquaticUtility.saltwaterTilesStatDisplayCache]);
+            string SalinityDesc = "Panaquatic_SalinityStat_Desc".Translate([PanaquaticStartupTasks.freshwaterTilesStatDisplayCache, PanaquaticStartupTasks.saltwaterTilesStatDisplayCache]);
             if (plantPreferenceRaw == WaterPlantPreference.WildTagged)
             {
                 SalinityDesc += "\n\n"
                                 + "Panaquatic_SalinityStat_DescWildTagged".Translate().Colorize(ColoredText.TipSectionTitleColor)
-                                + PanaquaticUtility.wildTaggedTilesCacheDictionary[__instance];
+                                + PanaquaticStartupTasks.wildTaggedTilesCacheDictionary[__instance];
             }
                 
             var statEntry = new StatDrawEntry(

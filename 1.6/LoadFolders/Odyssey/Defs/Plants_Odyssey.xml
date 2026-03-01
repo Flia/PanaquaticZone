@@ -2,7 +2,6 @@
 <Defs>
     <ThingDef ParentName="PlantOdysseyLotus">
         <defName>Plant_Lotus_Cultivated</defName>
-        <label>decorative lotus</label>
         <plant>
             <wildTerrainTags Inherit="False"/>
         </plant>

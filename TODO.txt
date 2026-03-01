@@ -1,6 +1,10 @@
 Issue tracker:
 - screenshots?
 - showing a question mark for "no available plants" is also a solution if I can make it work
+- check language strings
+- nuke settings?
+- nuke wildtagged? plants with wild tags may be simply skipped by the zone at all
+- update description
  
 Backburner:
 - check if any water-exclusive trees will work

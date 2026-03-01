@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -7,11 +6,6 @@ namespace PanaquaticZone;
 
 public static class PanaquaticUtility
 {
-    public static string freshwaterTilesStatDisplayCache;
-    public static string saltwaterTilesStatDisplayCache;
-    public static readonly HashSet<TerrainDef> allAcceptableWaterTilesTracker = [];
-    public static readonly Dictionary<PlantProperties, string> wildTaggedTilesCacheDictionary = [];
-
     public static bool CanPlantAt(ThingDef plantDef, IPlantToGrowSettable settable)
     {
         var plantTags = plantDef.plant.WildTerrainTags;
@@ -22,10 +16,9 @@ public static class PanaquaticUtility
             plantTags.Overlaps(cell.GetTerrain(settable.Map).tags.OrElseEmptyEnumerable()));
     }
 
-    //should I also make it check for polluted water?
     public static void WarnIfPreferenceMismatch(ThingDef plantDef, IPlantToGrowSettable settable)
     {
-        if (getWaterPlantPreference(plantDef) == WaterPlantPreference.Euryhaline) return;
+        if (plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline) return;
 
         var plantTags = plantDef.plant.WildTerrainTags;
 
@@ -40,12 +33,12 @@ public static class PanaquaticUtility
         }
     }
 
-    public static WaterPlantPreference getWaterPlantPreference(ThingDef plantDef)
+    public static WaterPlantPreference getWaterPlantPreference(this ThingDef plantDef)
     {
-        return getWaterPlantPreference(plantDef.plant);
+        return plantDef.plant.getWaterPlantPreference();
     }
 
-    public static WaterPlantPreference getWaterPlantPreference(PlantProperties plant)
+    public static WaterPlantPreference getWaterPlantPreference(this PlantProperties plant)
     {
         if (!plant.sowTags.Contains("Panaquatic_Zone"))
             return WaterPlantPreference.None;
@@ -59,6 +52,18 @@ public static class PanaquaticUtility
         if (plant.WildTerrainTags != null && plant.WildTerrainTags.Count > 0)
             return WaterPlantPreference.WildTagged;
         return WaterPlantPreference.None;
+    }
+    
+    public static bool SettableEntirelySaltwater(this IPlantToGrowSettable s)
+    {
+        foreach (IntVec3 cell in s.Cells)
+        {
+            if (cell.GetWaterBodyType(s.Map) == WaterBodyType.Freshwater)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
 

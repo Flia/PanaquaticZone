@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using Verse;
 
 namespace PanaquaticZone;
@@ -11,7 +11,7 @@ public class Panaquatic_Settings : ModSettings
     public override void ExposeData()
     {
         Scribe_Values.Look(ref MarineAgriculture, "MarineAgricultureSetting");
-        Scribe_Values.Look(ref IndustrialRunoffToo, "IndustrialRunoffToo");
+        //Scribe_Values.Look(ref IndustrialRunoffToo, "IndustrialRunoffToo");
         base.ExposeData();
     }
 
@@ -46,4 +46,4 @@ public class Panaquatic : Mod
     {
         return "Panaquatic_Settings".Translate();
     }
-}
+}*/

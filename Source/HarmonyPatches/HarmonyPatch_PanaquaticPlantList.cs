@@ -4,7 +4,7 @@ using HarmonyLib;
 
 namespace PanaquaticZone;
 
-[HarmonyPatch(typeof(PlantUtility), "CanSowOnGrower")]
+[HarmonyPatch(typeof(PlantUtility), nameof(PlantUtility.CanSowOnGrower))]
 public static class HarmonyPatch_PanaquaticPlantList
 {
     public static void Postfix(ThingDef plantDef, object obj, ref bool __result)
