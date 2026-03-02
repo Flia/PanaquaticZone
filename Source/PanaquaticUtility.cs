@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
@@ -8,7 +9,7 @@ public static class PanaquaticUtility
 {
     public static bool CanPlantAt(ThingDef plantDef, IPlantToGrowSettable settable)
     {
-        var plantTags = plantDef.plant.WildTerrainTags;
+        HashSet<string> plantTags = plantDef.plant.WildTerrainTags;
 
         if (plantTags == null) return false;
 
@@ -20,16 +21,14 @@ public static class PanaquaticUtility
     {
         if (plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline) return;
 
-        var plantTags = plantDef.plant.WildTerrainTags;
+        HashSet<string> plantTags = plantDef.plant.WildTerrainTags;
 
-        foreach (IntVec3 cell in settable.Cells)
+        if (settable.Cells.Any(cell =>
+                !plantTags.Overlaps(cell.GetTerrain(settable.Map).tags.OrElseEmptyEnumerable())))
         {
-            if (!plantTags.Overlaps(cell.GetTerrain(settable.Map).tags.OrElseEmptyEnumerable()))
-            {
-                Messages.Message("Panaquatic_WarnPreferenceMismatch".Translate(plantDef.label),
-                    MessageTypeDefOf.RejectInput, false);
-                return;
-            }
+            Messages.Message("Panaquatic_WarnPreferenceMismatch".Translate(plantDef.label),
+                MessageTypeDefOf.RejectInput, false);
+            return;
         }
     }
 
@@ -56,14 +55,7 @@ public static class PanaquaticUtility
     
     public static bool SettableEntirelySaltwater(this IPlantToGrowSettable s)
     {
-        foreach (IntVec3 cell in s.Cells)
-        {
-            if (cell.GetWaterBodyType(s.Map) == WaterBodyType.Freshwater)
-            {
-                return false;
-            }
-        }
-        return true;
+        return s.Cells.All(cell => cell.GetWaterBodyType(s.Map) != WaterBodyType.Freshwater);
     }
 }
 

@@ -11,6 +11,7 @@
             </li>
         </modExtensions>
     </ThingDef>
+    
     <ThingDef ParentName="LTS_Plant_Cattail">
         <defName>LTS_Plant_Cattail_Cultivated</defName>
         <plant>
@@ -22,6 +23,7 @@
             </li>
         </modExtensions>
     </ThingDef>
+    
     <ThingDef ParentName="LTS_Plant_Goblet">
         <defName>LTS_Plant_Goblet_Cultivated</defName>
         <plant>

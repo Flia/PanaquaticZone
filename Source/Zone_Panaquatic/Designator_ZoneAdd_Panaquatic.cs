@@ -5,7 +5,7 @@ using Verse;
 
 namespace PanaquaticZone;
 
-//Designator_ZoneAdd_Fishing has some pretty convoluted code for cell acceptance. I wonder why?
+//TODO: Designator_ZoneAdd_Fishing has some pretty convoluted code for cell acceptance. I wonder why?
 public class Designator_ZoneAdd_Panaquatic : Designator_ZoneAdd
 {
     protected override string NewZoneLabel => "Panaquatic_PanaquaticZone".Translate();
@@ -28,8 +28,8 @@ public class Designator_ZoneAdd_Panaquatic : Designator_ZoneAdd
         if (!base.CanDesignateCell(c).Accepted) return false;
         if (c.GetTerrain(Map).passability == Traversability.Impassable) return false;
         if (c.IsPolluted(Map)) return false;
-        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater && PanaquaticStartupTasks.AllowFreshwaterForZone) return true;
-        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && PanaquaticStartupTasks.AllowSaltwaterForZone;
+        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater && PanaquaticStartupTasks.allowFreshwaterForZone) return true;
+        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && PanaquaticStartupTasks.allowSaltwaterForZone;
     }
 
     public override void DesignateMultiCell(IEnumerable<IntVec3> cells)

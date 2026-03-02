@@ -3,7 +3,8 @@ using UnityEngine;
 
 namespace PanaquaticZone;
 
-public static class PanaquaticZoneColorUtility //straight up copied from ZoneColorUtility
+//straight up copied from ZoneColorUtility
+public static class PanaquaticZoneColorUtility 
 {
     private static readonly List<Color> panaquaticZoneColors = [];
     private static int nextPanaquaticZoneColorIndex;
