@@ -24,33 +24,31 @@ public static class PanaquaticStartupTasks
         TagPlants(allPlantDefsWithExtension, allWaterTiles);
         freshwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
         saltwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
-        allowFreshwaterForZone = Enumerable.Any(allPlantDefsWithExtension,
-            plantDef => plantDef.getWaterPlantPreference() == WaterPlantPreference.Freshwater ||
-                        plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
-        allowSaltwaterForZone = Enumerable.Any(allPlantDefsWithExtension,
-                    plantDef => plantDef.getWaterPlantPreference() == WaterPlantPreference.Saltwater ||
-                                plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
-        if (allowFreshwaterForZone)
-            defaultFreshwaterPlant = allPlantDefsWithExtension.Find(plantDef
-                => plantDef.getWaterPlantPreference() == WaterPlantPreference.Freshwater
-                   || plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
-        if (allowSaltwaterForZone)
-                    defaultSaltwaterPlant = allPlantDefsWithExtension.Find(plantDef
-                        => plantDef.getWaterPlantPreference() == WaterPlantPreference.Saltwater
-                           || plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
+
+        WaterPlantPreference[] freshWaterPreference = [WaterPlantPreference.Freshwater, WaterPlantPreference.Euryhaline];
+        WaterPlantPreference[] saltWaterPreference = [WaterPlantPreference.Saltwater, WaterPlantPreference.Euryhaline];
+
+        defaultFreshwaterPlant = allPlantDefsWithExtension.FirstOrDefault(plantDef =>
+            freshWaterPreference.Contains(plantDef.getWaterPlantPreference()));
+        defaultSaltwaterPlant = allPlantDefsWithExtension.FirstOrDefault(plantDef =>
+            saltWaterPreference.Contains(plantDef.getWaterPlantPreference()));
+
+        allowFreshwaterForZone = defaultFreshwaterPlant != null;
+        allowSaltwaterForZone = defaultSaltwaterPlant != null;
     }
 
     private static void TagTerrain(List<TerrainDef> allWaterTiles)
     {
         foreach (TerrainDef terrainDef in allWaterTiles)
         {
-            if (terrainDef.waterBodyType == WaterBodyType.Freshwater)
+            switch (terrainDef.waterBodyType)
             {
-                terrainDef.tags.Add("Panaquatic_freshwater_terrain_tag");
-            }
-            else if (terrainDef.waterBodyType == WaterBodyType.Saltwater)
-            {
-                terrainDef.tags.Add("Panaquatic_saltwater_terrain_tag");
+                case WaterBodyType.Freshwater:
+                    terrainDef.tags.Add("Panaquatic_freshwater_terrain_tag");
+                    break;
+                case WaterBodyType.Saltwater:
+                    terrainDef.tags.Add("Panaquatic_saltwater_terrain_tag");
+                    break;
             }
         }
     }
