@@ -55,12 +55,11 @@ public static class PanaquaticStartupTasks
 
     private static string CacheWaterTerrainForStatDisplay(List<TerrainDef> allWaterTiles, WaterBodyType waterBodyType)
     {
-        HashSet<string> waterTiles = [];
-        foreach (TerrainDef terrainDef in allWaterTiles.Where(terrainDef => terrainDef.waterBodyType == waterBodyType))
-        {
-            waterTiles.Add(terrainDef.label);
-        }
-        return waterTiles.ToLineList("- ");
+        return allWaterTiles
+            .Where(terrainDef => terrainDef.waterBodyType == waterBodyType)
+            .Select(x => x.label)
+            .Distinct()
+            .ToLineList("- ");
     }
     
     //Gives all plants with my modExtension the sowTag and terrainTags
@@ -69,7 +68,8 @@ public static class PanaquaticStartupTasks
         //Prep for wildtagged block
         var allAcceptableWaterTilesTracker = allWaterTiles
             .Where(terrainDef => terrainDef.waterBodyType is WaterBodyType.Freshwater or WaterBodyType.Saltwater)
-            .ToHashSet();
+            .Distinct()
+            .ToList();
         
         foreach (ThingDef plantDef in allPlantDefsWithExtension)
         {
