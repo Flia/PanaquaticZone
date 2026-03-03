@@ -79,13 +79,14 @@ public static class PanaquaticStartupTasks
             if (plantDef.plant.wildTerrainTags is { Count: > 0 })
             {
                 Log.Warning("Found mod extension on a plant with wild terrain tags: " + plantDef.defName);
-                HashSet<string> terrainDefsForPlant = [];
-                foreach (TerrainDef terrain in allAcceptableWaterTilesTracker.Where(terrain =>
-                             plantDef.plant.WildTerrainTags.Overlaps(terrain.tags.OrElseEmptyEnumerable())))
-                {
-                    terrainDefsForPlant.Add(terrain.label.CapitalizeFirst());
-                } 
-                wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant.ToLineList("- "));
+
+                var terrainDefsForPlant = allAcceptableWaterTilesTracker
+                    .Where(terrain => plantDef.plant.WildTerrainTags.Overlaps(terrain.tags.OrElseEmptyEnumerable()))
+                    .Select(terrain => terrain.label.CapitalizeFirst())
+                    .Distinct()
+                    .ToLineList();
+
+                wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant);
                 continue;
             }
             //end of WildTagged block
