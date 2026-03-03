@@ -67,11 +67,9 @@ public static class PanaquaticStartupTasks
     private static void TagPlants(List<ThingDef> allPlantDefsWithExtension, List<TerrainDef> allWaterTiles) {
         
         //Prep for wildtagged block
-        HashSet<TerrainDef> allAcceptableWaterTilesTracker = [];
-        foreach (TerrainDef terrainDef in allWaterTiles.Where(terrainDef => terrainDef.waterBodyType is WaterBodyType.Freshwater or WaterBodyType.Saltwater))
-        {
-            allAcceptableWaterTilesTracker.Add(terrainDef);
-        }
+        var allAcceptableWaterTilesTracker = allWaterTiles
+            .Where(terrainDef => terrainDef.waterBodyType is WaterBodyType.Freshwater or WaterBodyType.Saltwater)
+            .ToHashSet();
         
         foreach (ThingDef plantDef in allPlantDefsWithExtension)
         {
