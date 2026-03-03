@@ -24,56 +24,52 @@ public static class PanaquaticStartupTasks
         TagPlants(allPlantDefsWithExtension, allWaterTiles);
         freshwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
         saltwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
-        allowFreshwaterForZone = Enumerable.Any(allPlantDefsWithExtension,
-            plantDef => plantDef.getWaterPlantPreference() == WaterPlantPreference.Freshwater ||
-                        plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
-        allowSaltwaterForZone = Enumerable.Any(allPlantDefsWithExtension,
-                    plantDef => plantDef.getWaterPlantPreference() == WaterPlantPreference.Saltwater ||
-                                plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
-        if (allowFreshwaterForZone)
-            defaultFreshwaterPlant = allPlantDefsWithExtension.Find(plantDef
-                => plantDef.getWaterPlantPreference() == WaterPlantPreference.Freshwater
-                   || plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
-        if (allowSaltwaterForZone)
-                    defaultSaltwaterPlant = allPlantDefsWithExtension.Find(plantDef
-                        => plantDef.getWaterPlantPreference() == WaterPlantPreference.Saltwater
-                           || plantDef.getWaterPlantPreference() == WaterPlantPreference.Euryhaline);
+
+        WaterPlantPreference[] freshWaterPreference = [WaterPlantPreference.Freshwater, WaterPlantPreference.Euryhaline];
+        WaterPlantPreference[] saltWaterPreference = [WaterPlantPreference.Saltwater, WaterPlantPreference.Euryhaline];
+
+        defaultFreshwaterPlant = allPlantDefsWithExtension.FirstOrDefault(plantDef =>
+            freshWaterPreference.Contains(plantDef.getWaterPlantPreference()));
+        defaultSaltwaterPlant = allPlantDefsWithExtension.FirstOrDefault(plantDef =>
+            saltWaterPreference.Contains(plantDef.getWaterPlantPreference()));
+
+        allowFreshwaterForZone = defaultFreshwaterPlant != null;
+        allowSaltwaterForZone = defaultSaltwaterPlant != null;
     }
 
     private static void TagTerrain(List<TerrainDef> allWaterTiles)
     {
         foreach (TerrainDef terrainDef in allWaterTiles)
         {
-            if (terrainDef.waterBodyType == WaterBodyType.Freshwater)
+            switch (terrainDef.waterBodyType)
             {
-                terrainDef.tags.Add("Panaquatic_freshwater_terrain_tag");
-            }
-            else if (terrainDef.waterBodyType == WaterBodyType.Saltwater)
-            {
-                terrainDef.tags.Add("Panaquatic_saltwater_terrain_tag");
+                case WaterBodyType.Freshwater:
+                    terrainDef.tags.Add("Panaquatic_freshwater_terrain_tag");
+                    break;
+                case WaterBodyType.Saltwater:
+                    terrainDef.tags.Add("Panaquatic_saltwater_terrain_tag");
+                    break;
             }
         }
     }
 
     private static string CacheWaterTerrainForStatDisplay(List<TerrainDef> allWaterTiles, WaterBodyType waterBodyType)
     {
-        HashSet<string> waterTiles = [];
-        foreach (TerrainDef terrainDef in allWaterTiles.Where(terrainDef => terrainDef.waterBodyType == waterBodyType))
-        {
-            waterTiles.Add(terrainDef.label);
-        }
-        return waterTiles.ToLineList("- ");
+        return allWaterTiles
+            .Where(terrainDef => terrainDef.waterBodyType == waterBodyType)
+            .Select(x => x.label)
+            .Distinct()
+            .ToLineList("- ");
     }
     
     //Gives all plants with my modExtension the sowTag and terrainTags
     private static void TagPlants(List<ThingDef> allPlantDefsWithExtension, List<TerrainDef> allWaterTiles) {
         
         //Prep for wildtagged block
-        HashSet<TerrainDef> allAcceptableWaterTilesTracker = [];
-        foreach (TerrainDef terrainDef in allWaterTiles.Where(terrainDef => terrainDef.waterBodyType is WaterBodyType.Freshwater or WaterBodyType.Saltwater))
-        {
-            allAcceptableWaterTilesTracker.Add(terrainDef);
-        }
+        var allAcceptableWaterTilesTracker = allWaterTiles
+            .Where(terrainDef => terrainDef.waterBodyType is WaterBodyType.Freshwater or WaterBodyType.Saltwater)
+            .Distinct()
+            .ToList();
         
         foreach (ThingDef plantDef in allPlantDefsWithExtension)
         {
@@ -83,13 +79,14 @@ public static class PanaquaticStartupTasks
             if (plantDef.plant.wildTerrainTags is { Count: > 0 })
             {
                 Log.Warning("Found mod extension on a plant with wild terrain tags: " + plantDef.defName);
-                HashSet<string> terrainDefsForPlant = [];
-                foreach (TerrainDef terrain in allAcceptableWaterTilesTracker.Where(terrain =>
-                             plantDef.plant.WildTerrainTags.Overlaps(terrain.tags.OrElseEmptyEnumerable())))
-                {
-                    terrainDefsForPlant.Add(terrain.label.CapitalizeFirst());
-                } 
-                wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant.ToLineList("- "));
+
+                var terrainDefsForPlant = allAcceptableWaterTilesTracker
+                    .Where(terrain => plantDef.plant.WildTerrainTags.Overlaps(terrain.tags.OrElseEmptyEnumerable()))
+                    .Select(terrain => terrain.label.CapitalizeFirst())
+                    .Distinct()
+                    .ToLineList();
+
+                wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant);
                 continue;
             }
             //end of WildTagged block
