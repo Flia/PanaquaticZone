@@ -1,8 +1,7 @@
 Issue tracker:
 - screenshots?
-- nuke wildtagged? plants with wild tags may be simply skipped by the zone at all
-- update description - wildly outdated
- 
+- shows BadTextures if I swap translation *without* fully rebooting the game. Unsure if my bug or e.g. Harmony. Works fine with full reboot though
+
 Backburner:
 - check if any water-exclusive trees will work
 - stupid cypress damn it to hell
@@ -10,6 +9,5 @@ Backburner:
 
 Ideas:
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation
-- "see also other useful methods in GenText: ToCommaListOr, ToLineList, ToSpaceList, ToTitleCaseSmart, all the ToString[Type] methods, and the kinda niche but surprisingly useful Shorten"
 
 

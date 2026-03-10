@@ -8,7 +8,7 @@ namespace PanaquaticZone;
 [HarmonyPatch(typeof(PlantProperties),"SpecialDisplayStats")]
 public class HarmonyPatch_AddSalinityStat
 {
-    private static string Panaquatic_SalinityStat_Desc, Panaquatic_SalinityStat_DescWildTagged, Panaquatic_SalinityStat;
+    private static string Panaquatic_SalinityStat_Desc, Panaquatic_SalinityStat;
     private static Dictionary<string, string> PlantPreferenceStrings = new();
     private static IEnumerable<StatDrawEntry> Postfix(IEnumerable<StatDrawEntry> __result, PlantProperties __instance)
     {
@@ -22,20 +22,9 @@ public class HarmonyPatch_AddSalinityStat
             PanaquaticStartupTasks.saltwaterTilesStatDisplayCache
         ]);
 
-        Panaquatic_SalinityStat_DescWildTagged ??= "Panaquatic_SalinityStat_DescWildTagged".Translate()
-            .Colorize(ColoredText.TipSectionTitleColor);
-
         Panaquatic_SalinityStat ??= "Panaquatic_SalinityStat".Translate();
 
-        string SalinityDesc = Panaquatic_SalinityStat_Desc;
-        if (plantPreferenceRaw == WaterPlantPreference.WildTagged)
-        {
-            SalinityDesc += "\n\n"
-                            + Panaquatic_SalinityStat_DescWildTagged
-                            + PanaquaticStartupTasks.wildTaggedTilesCacheDictionary[__instance];
-        }
-            
-        if(!PlantPreferenceStrings.TryGetValue($"Panaquatic_{plantPreferenceRaw}Preference", out var plantReference))
+        if (!PlantPreferenceStrings.TryGetValue($"Panaquatic_{plantPreferenceRaw}Preference", out string plantReference))
         {
             plantReference = $"Panaquatic_{plantPreferenceRaw}Preference".Translate().ToString();
             PlantPreferenceStrings.Add($"Panaquatic_{plantPreferenceRaw}Preference", plantReference);
@@ -45,7 +34,7 @@ public class HarmonyPatch_AddSalinityStat
             StatCategoryDefOf.Basics,
             Panaquatic_SalinityStat,
             plantReference,
-            SalinityDesc,
+            Panaquatic_SalinityStat_Desc,
             4157);
         return __result.Concat(statEntry);
     }

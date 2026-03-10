@@ -28,7 +28,6 @@ public static class PanaquaticUtility
         {
             Messages.Message("Panaquatic_WarnPreferenceMismatch".Translate(plantDef.label),
                 MessageTypeDefOf.RejectInput, false);
-            return;
         }
     }
 
@@ -57,13 +56,4 @@ public static class PanaquaticUtility
     {
         return s.Cells.All(cell => cell.GetWaterBodyType(s.Map) != WaterBodyType.Freshwater);
     }
-}
-
-public enum WaterPlantPreference
-{
-    Freshwater = 0,
-    Saltwater,
-    Euryhaline,
-    WildTagged,
-    None
 }

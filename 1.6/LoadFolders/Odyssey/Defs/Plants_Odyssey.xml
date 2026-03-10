@@ -4,6 +4,7 @@
         <defName>Plant_Lotus_Cultivated</defName>
         <plant>
             <wildTerrainTags Inherit="False"/>
+            <sowWork>750</sowWork> <!-- same as roses -->
         </plant>
         <modExtensions>
             <li Class="PanaquaticZone.ModExtension_PlantSalinityPreference">

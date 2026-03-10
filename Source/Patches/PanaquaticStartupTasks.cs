@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using RimWorld;
 using Verse;
 
 namespace PanaquaticZone;
@@ -14,16 +13,15 @@ public static class PanaquaticStartupTasks
     public static readonly ThingDef defaultSaltwaterPlant;
     public static readonly string freshwaterTilesStatDisplayCache;
     public static readonly string saltwaterTilesStatDisplayCache;
-    public static readonly Dictionary<PlantProperties, string> wildTaggedTilesCacheDictionary = [];
 
     static PanaquaticStartupTasks()
     {
         List<TerrainDef> allWaterTiles = DefDatabase<TerrainDef>.AllDefs.Where(def => def.IsWater && def.passability != Traversability.Impassable).ToList();
         List<ThingDef> allPlantDefsWithExtension = DefDatabase<ThingDef>.AllDefs.Where(def => def.HasModExtension<ModExtension_PlantSalinityPreference>()).ToList();
         TagTerrain(allWaterTiles);
-        TagPlants(allPlantDefsWithExtension, allWaterTiles);
+        TagPlants(allPlantDefsWithExtension);
         freshwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
-        saltwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
+        saltwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Saltwater);
 
         WaterPlantPreference[] freshWaterPreference = [WaterPlantPreference.Freshwater, WaterPlantPreference.Euryhaline];
         WaterPlantPreference[] saltWaterPreference = [WaterPlantPreference.Saltwater, WaterPlantPreference.Euryhaline];
@@ -62,34 +60,22 @@ public static class PanaquaticStartupTasks
             .ToLineList("- ");
     }
     
-    //Gives all plants with my modExtension the sowTag and terrainTags
-    private static void TagPlants(List<ThingDef> allPlantDefsWithExtension, List<TerrainDef> allWaterTiles) {
-        
-        //Prep for wildtagged block
-        var allAcceptableWaterTilesTracker = allWaterTiles
-            .Where(terrainDef => terrainDef.waterBodyType is WaterBodyType.Freshwater or WaterBodyType.Saltwater)
-            .Distinct()
-            .ToList();
-        
+    //Gives plants with my modExtension the sowTag and terrainTags
+    private static void TagPlants(List<ThingDef> allPlantDefsWithExtension) {
         foreach (ThingDef plantDef in allPlantDefsWithExtension)
         {
-            plantDef.plant.sowTags.Add("Panaquatic_Zone");
-
-            //Although I handle wild plants too, WildTagged is fallback logic
+            //ignore plants with wildTerrainTags, they don't work correctly with growing zones
             if (plantDef.plant.wildTerrainTags is { Count: > 0 })
             {
                 Log.Warning("Found mod extension on a plant with wild terrain tags: " + plantDef.defName);
-
-                var terrainDefsForPlant = allAcceptableWaterTilesTracker
-                    .Where(terrain => plantDef.plant.WildTerrainTags.Overlaps(terrain.tags.OrElseEmptyEnumerable()))
-                    .Select(terrain => terrain.label.CapitalizeFirst())
-                    .Distinct()
-                    .ToLineList();
-
-                wildTaggedTilesCacheDictionary.Add(plantDef.plant, terrainDefsForPlant);
                 continue;
             }
-            //end of WildTagged block
+            
+            plantDef.plant.sowTags.Add("Panaquatic_Zone");
+            
+            //I'm guessing it's a new 1.6 stat, since older mods are missing it.
+            //Removes Fertility Requirement & Fertility Sensitivity from stat display, which for all of those plants is 0% anyway
+            plantDef.plant.completelyIgnoreFertility = true; 
             
             HashSet<string> tagsToAdd = plantDef.GetModExtension<ModExtension_PlantSalinityPreference>().plantPreference switch
             {

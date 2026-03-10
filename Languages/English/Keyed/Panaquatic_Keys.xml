@@ -5,7 +5,6 @@
     
     <Panaquatic_SalinityStat>Water preference</Panaquatic_SalinityStat>
     <Panaquatic_SalinityStat_Desc>Water salinity required for this plant's growth. Plants can be freshwater, saltwater, or both salt- and freshwater.\n\nFreshwater plants can grow in this terrain:\n{0}\n\nSaltwater plants can grow in this terrain:\n{1}</Panaquatic_SalinityStat_Desc>
-    <Panaquatic_SalinityStat_DescWildTagged>This is a wild plant and will only grow in this terrain:\n</Panaquatic_SalinityStat_DescWildTagged>
     
     <Panaquatic_FreshwaterPreference>Freshwater</Panaquatic_FreshwaterPreference>
     <Panaquatic_SaltwaterPreference>Saltwater</Panaquatic_SaltwaterPreference>

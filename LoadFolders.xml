@@ -8,6 +8,5 @@
         <li IfModActive="LimeTreeSnake.Biosphere">1.6/LoadFolders/Biosphere</li>
         <li IfModActive="VanillaExpanded.VPlantsEMore">1.6/LoadFolders/VPlantsEMore</li>
         <li IfModActive="AlgaeCrop.VEPMPAddon">1.6/LoadFolders/AlgaeAddon</li>
-        <li IfModActive="SirMashedPotato.Ashlands">1.6/LoadFolders/MashedsAshlands</li>
     </v1.6>
 </LoadFolders>
