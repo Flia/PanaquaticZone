@@ -1,5 +1,4 @@
 Issue tracker:
-- semi-critical - doesn't work with Nice Plants Menu. May mean I am not patching properly
 - screenshots?
 - shows BadTextures if I swap translation *without* fully rebooting the game. Unsure if my bug or e.g. Harmony. Works fine with full reboot though
 
@@ -11,4 +10,5 @@ Backburner:
 Ideas:
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation
 - massive feature creep, but perhaps definition of allowed water *depth*
+- more in-depth integration with Nice Plants Menu?
 

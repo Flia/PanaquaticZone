@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Excluded>
+    <exclude>.git</exclude>
+    <exclude>.idea</exclude>
+    <exclude>LICENSE</exclude>
+    <exclude>Other assets</exclude>
+    <exclude>PanaquaticZone.sln</exclude>
+    <exclude>README.md</exclude>
+    <exclude>Source</exclude>
+  </Excluded>
+</Configuration>
