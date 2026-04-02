@@ -12,20 +12,4 @@
             </li>
         </value>
     </Operation>
-
-    <Operation Class="PatchOperationAttributeAdd">
-        <xpath>Defs/ThingDef[defName="LTS_Plant_Aquaflume"]</xpath>
-        <attribute>Name</attribute>
-        <value>LTS_Plant_Aquaflume</value>
-    </Operation>
-    <Operation Class="PatchOperationAttributeAdd">
-        <xpath>Defs/ThingDef[defName="LTS_Plant_Cattail"]</xpath>
-        <attribute>Name</attribute>
-        <value>LTS_Plant_Cattail</value>
-    </Operation>
-    <Operation Class="PatchOperationAttributeAdd">
-        <xpath>Defs/ThingDef[defName="LTS_Plant_Goblet"]</xpath>
-        <attribute>Name</attribute>
-        <value>LTS_Plant_Goblet</value>
-    </Operation>
 </Patch>

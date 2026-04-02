@@ -4,7 +4,7 @@
     <Panaquatic_PanaquaticZone_description>Создать зону где ваши поселенцы будут выращивать определенный тип водных растений. В зависимости от доступных растений, эту область можно разместить и на пресноводных и на морских клетках.</Panaquatic_PanaquaticZone_description>
 
     <Panaquatic_SalinityStat>Предпочтения к воде</Panaquatic_SalinityStat>
-    <Panaquatic_SalinityStat_Desc>Допустимая соленость воды в котором это растение может расти. Растение может быть пресноводным, солоноводным, или же солоно- и пресноводным.\n\nПресноводные растения могут расти на такой местности:\n{0}\n\nСолоноводные растения могут расти на такой местности:\n{1}</Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_Desc>Необходимая соленость воды для выращивания этого растения в зонах водяных посадок. Растение может быть пресноводным, солоноводным, или же солоно- и пресноводным.\n\nПресноводные растения могут расти на такой местности:\n{0}\n\nСолоноводные растения могут расти на такой местности:\n{1}</Panaquatic_SalinityStat_Desc>
     
     <Panaquatic_FreshwaterPreference>Пресноводное</Panaquatic_FreshwaterPreference>
     <Panaquatic_SaltwaterPreference>Солоноводное</Panaquatic_SaltwaterPreference>

@@ -4,7 +4,7 @@
     <Panaquatic_PanaquaticZone_description>Create a zone where colonists will try to grow aquatic plants. Depending on plants available, this zone can be placed over either fresh or salty water.</Panaquatic_PanaquaticZone_description>
     
     <Panaquatic_SalinityStat>Water preference</Panaquatic_SalinityStat>
-    <Panaquatic_SalinityStat_Desc>Water salinity required for this plant's growth. Plants can be freshwater, saltwater, or both salt- and freshwater.\n\nFreshwater plants can grow in this terrain:\n{0}\n\nSaltwater plants can grow in this terrain:\n{1}</Panaquatic_SalinityStat_Desc>
+    <Panaquatic_SalinityStat_Desc>Water salinity required for this plant's cultivation in aquatic zones. Plants can be freshwater, saltwater, or both salt- and freshwater.\n\nFreshwater plants can grow in this terrain:\n{0}\n\nSaltwater plants can grow in this terrain:\n{1}</Panaquatic_SalinityStat_Desc>
     
     <Panaquatic_FreshwaterPreference>Freshwater</Panaquatic_FreshwaterPreference>
     <Panaquatic_SaltwaterPreference>Saltwater</Panaquatic_SaltwaterPreference>
