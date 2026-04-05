@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 using HarmonyLib;
 using RimWorld;
@@ -10,9 +9,9 @@ namespace PanaquaticZone;
 public class HarmonyPatchCompat_NicePlantsMenu
 {
     [HarmonyPrepare]
-    private static bool shouldPatchBadHygiene()
+    private static bool ModConfigCheck()
     {
-        return ModsConfig.IsActive("Andromeda.NicePlantsMenu");
+        return ModLister.AnyModActiveNoSuffix(["Andromeda.NicePlantsMenu"]);
     }
 
     [HarmonyTargetMethod]

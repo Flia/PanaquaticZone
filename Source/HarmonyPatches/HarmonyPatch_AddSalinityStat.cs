@@ -18,8 +18,8 @@ public class HarmonyPatch_AddSalinityStat
         WaterPlantPreference plantPreferenceRaw = __instance.getWaterPlantPreference();
 
         Panaquatic_SalinityStat_Desc ??= "Panaquatic_SalinityStat_Desc".Translate([
-            PanaquaticStartupTasks.freshwaterTilesStatDisplayCache,
-            PanaquaticStartupTasks.saltwaterTilesStatDisplayCache
+            Setup.freshwaterTilesStatDisplayCache,
+            Setup.saltwaterTilesStatDisplayCache
         ]);
 
         Panaquatic_SalinityStat ??= "Panaquatic_SalinityStat".Translate();

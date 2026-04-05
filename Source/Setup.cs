@@ -5,7 +5,7 @@ using Verse;
 namespace PanaquaticZone;
 
 [StaticConstructorOnStartup]
-public static class PanaquaticStartupTasks
+public static class Setup
 {
     public static readonly bool allowFreshwaterForZone;
     public static readonly bool allowSaltwaterForZone;
@@ -14,11 +14,11 @@ public static class PanaquaticStartupTasks
     public static readonly string freshwaterTilesStatDisplayCache;
     public static readonly string saltwaterTilesStatDisplayCache;
 
-    static PanaquaticStartupTasks()
+    static Setup()
     {
         List<TerrainDef> allWaterTiles = DefDatabase<TerrainDef>.AllDefs.Where(def => def.IsWater && def.passability != Traversability.Impassable).ToList();
         List<ThingDef> allPlantDefsWithExtension = DefDatabase<ThingDef>.AllDefs.Where(def => def.HasModExtension<ModExtension_PlantSalinityPreference>()).ToList();
-        TagTerrain(allWaterTiles);
+        TagTerrain(DefDatabase<TerrainDef>.AllDefsListForReading);
         TagPlants(allPlantDefsWithExtension);
         freshwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);
         saltwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Saltwater);
@@ -35,19 +35,22 @@ public static class PanaquaticStartupTasks
         allowSaltwaterForZone = defaultSaltwaterPlant != null;
     }
 
-    private static void TagTerrain(List<TerrainDef> allWaterTiles)
+    private static void TagTerrain(List<TerrainDef> tiles)
     {
-        foreach (TerrainDef terrainDef in allWaterTiles)
+        foreach (TerrainDef terrainDef in tiles)
         {
             switch (terrainDef.waterBodyType)
             {
                 case WaterBodyType.Freshwater:
                     terrainDef.tags.Add("Panaquatic_freshwater_terrain_tag");
-                    break;
+                    continue;
                 case WaterBodyType.Saltwater:
                     terrainDef.tags.Add("Panaquatic_saltwater_terrain_tag");
-                    break;
+                    continue;
             }
+            
+            terrainDef.tags ??= [];
+            terrainDef.tags.Add("Panaquatic_outside-zone_terrain_tag");
         }
     }
 
@@ -80,13 +83,13 @@ public static class PanaquaticStartupTasks
             HashSet<string> tagsToAdd = plantDef.GetModExtension<ModExtension_PlantSalinityPreference>().plantPreference switch
             {
                 WaterPlantPreference.Freshwater =>
-                    ["Panaquatic_freshwater_terrain_tag"],
+                    ["Panaquatic_freshwater_terrain_tag", "Panaquatic_outside-zone_terrain_tag"],
                 WaterPlantPreference.Saltwater =>
-                    ["Panaquatic_saltwater_terrain_tag"],
+                    ["Panaquatic_saltwater_terrain_tag", "Panaquatic_outside-zone_terrain_tag"],
                 WaterPlantPreference.Euryhaline =>
-                    ["Panaquatic_freshwater_terrain_tag", "Panaquatic_saltwater_terrain_tag"],
+                    ["Panaquatic_freshwater_terrain_tag", "Panaquatic_saltwater_terrain_tag", "Panaquatic_outside-zone_terrain_tag"],
                 _ =>
-                    ["Panaquatic_freshwater_terrain_tag"]
+                    []
             };
             plantDef.plant.WildTerrainTags.AddRange(tagsToAdd);
         }

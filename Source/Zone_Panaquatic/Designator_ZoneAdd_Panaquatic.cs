@@ -28,8 +28,8 @@ public class Designator_ZoneAdd_Panaquatic : Designator_ZoneAdd
         if (!base.CanDesignateCell(c).Accepted) return false;
         if (c.GetTerrain(Map).passability == Traversability.Impassable) return false;
         if (c.IsPolluted(Map)) return false;
-        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater && PanaquaticStartupTasks.allowFreshwaterForZone) return true;
-        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && PanaquaticStartupTasks.allowSaltwaterForZone;
+        if (c.GetWaterBodyType(Map) == WaterBodyType.Freshwater && Setup.allowFreshwaterForZone) return true;
+        return c.GetWaterBodyType(Map) == WaterBodyType.Saltwater && Setup.allowSaltwaterForZone;
     }
 
     public override void DesignateMultiCell(IEnumerable<IntVec3> cells)

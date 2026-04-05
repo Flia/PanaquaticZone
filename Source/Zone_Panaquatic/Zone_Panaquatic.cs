@@ -43,8 +43,8 @@ public class Zone_Panaquatic : Zone_Growing
     private ThingDef GetDefaultPlant()
     {
         return !this.SettableEntirelySaltwater()
-            ? PanaquaticStartupTasks.defaultFreshwaterPlant
-            : PanaquaticStartupTasks.defaultSaltwaterPlant;
+            ? Setup.defaultFreshwaterPlant
+            : Setup.defaultSaltwaterPlant;
     }
     
     public override IEnumerable<Gizmo> GetZoneAddGizmos()
