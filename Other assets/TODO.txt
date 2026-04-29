@@ -1,11 +1,14 @@
 Issue tracker:
-- screenshots?
-- shows BadTextures if I swap translation *without* fully rebooting the game. Unsure if my bug or e.g. Harmony. Works fine with full reboot though
+- hydroponic fix means that plants will continue to live if they were sown into temp water and that water moved out
+ - may need a bespoke system - I mean somehow game checks for Pollution stat when sowing, so why not add Wetness
+ - maybe I should remove hydroponics from allowed tags tbh
 
 Backburner:
 - check if any water-exclusive trees will work
 - stupid cypress damn it to hell
  - has vanilla problem of not being sown in Growing Zones. It appears to be a weird interaction with its wildTerrainTags.
+- screenshots?
+- shows BadTextures if I swap translation *without* fully rebooting the game. Unsure if my bug or e.g. Harmony. Works fine with full reboot though
 
 Ideas:
 - vanilla growing zones can be hidden by right-clicking on vanilla growing zone gizmo. This also hides my zones. Probably need my own implementation

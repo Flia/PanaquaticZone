@@ -3,10 +3,9 @@ using Verse;
 
 namespace PanaquaticZone;
 
-[StaticConstructorOnStartup]
-public class HarmonyBootstrap
+public class Mod_PanaquaticZone : Mod
 {
-    static HarmonyBootstrap()
+    public Mod_PanaquaticZone(ModContentPack content) : base(content)
     {
         Harmony harmony = new("com.royallytipsy.panaquaticzone");
         harmony.PatchAll();
