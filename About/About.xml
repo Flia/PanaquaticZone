@@ -18,11 +18,10 @@
     </modDependencies>
     <loadAfter>
         <li>Ludeon.RimWorld</li>
-        <li>Ludeon.RimWorld.Odyssey</li>
-        <li>brrainz.harmony</li>
-        <li>Arquebus.StagzMerfolk</li>
+        
+        <!-- add gizmos with an XML patch which I then remove with my own XML patch -->
         <li>VanillaExpanded.VPlantsEMore</li>
         <li>LimeTreeSnake.Biosphere</li>
-        <li>AlgaeCrop.VEPMPAddon</li>
+        <li>VanillaExpanded.VCookESushi</li>
     </loadAfter>
 </ModMetaData>
