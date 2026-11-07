@@ -11,7 +11,7 @@ public static class HarmonyPatch_AddWaterMismatchWarnTo_WarnAsAppropriate
     {
         if (___settable is Zone_Panaquatic)
         {
-            PanaquaticUtility.WarnIfPreferenceMismatch(plantDef, ___settable);
+            Utility.WarnIfPreferenceMismatch(plantDef, ___settable);
         }
     }
 }

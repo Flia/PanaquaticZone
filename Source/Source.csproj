@@ -1,39 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <OutputType>Library</OutputType>
-        <TargetFramework>net48</TargetFramework>
+        <_RimWorldVersion>1.7</_RimWorldVersion>
         <RootNamespace>PanaquaticZone</RootNamespace>
         <AssemblyName>PanaquaticZone</AssemblyName>
-        <TargetFramework>net48</TargetFramework>
-        <LangVersion>latestmajor</LangVersion>
+        <OutputPath>..\$(_RimWorldVersion)\Assemblies\</OutputPath>
+        
+        <LangVersion>latest</LangVersion>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <GenerateDependencyFile>false</GenerateDependencyFile>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
         <DebugType>embedded</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>..\1.6\Assemblies</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <Configurations>Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <DebugType>embedded</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>..\1.6\Assemblies</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" />
-      <PackageReference Include="Lib.Harmony" Version="2.*">
-        <ExcludeAssets>runtime</ExcludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    <PropertyGroup>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(_RimWorldVersion)' == '1.7'">
+            <PropertyGroup>
+                <TargetFramework>net10.0</TargetFramework>
+            </PropertyGroup>
+            <ItemGroup>
+                <PackageReference Include="Lib.Harmony.Ref" Version="3.*-*" />
+                <Reference Include="Assembly-CSharp">
+                    <HintPath>D:\SteamLibrary\steamapps\common\RimWorld\Assembly-CSharp.dll</HintPath>
+                    <Private>False</Private>
+                </Reference>
+                <Reference Include="UnityStubs">
+                    <HintPath>D:\SteamLibrary\steamapps\common\RimWorld\UnityStubs.dll</HintPath>
+                    <Private>False</Private>
+                </Reference>
+                <Reference Include="UnityStubs">
+                    <HintPath>D:\SteamLibrary\steamapps\common\RimWorld\Waylith.dll</HintPath>
+                    <Private>False</Private>
+                </Reference>
+                <Reference Include="RimWorld">
+                    <HintPath>D:\SteamLibrary\steamapps\common\RimWorld\RimWorld.dll</HintPath>
+                    <Private>False</Private>
+                </Reference>
+            </ItemGroup>
+        </When>
+        <Otherwise>
+            <PropertyGroup>
+                <TargetFramework>net48</TargetFramework>
+            </PropertyGroup>
+            <ItemGroup>
+                <PackageReference Include="Lib.Harmony.Ref" Version="2.*" />
+                <PackageReference Include="Krafs.Rimworld.Ref" Version="$(_RimWorldVersion).*-*" />
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
 </Project>

@@ -5,7 +5,7 @@ using Verse;
 
 namespace PanaquaticZone;
 
-public static class PanaquaticUtility
+public static class Utility
 {
     public static bool CanPlantAt(ThingDef plantDef, IPlantToGrowSettable settable)
     {
@@ -31,10 +31,8 @@ public static class PanaquaticUtility
         }
     }
 
-    public static WaterPlantPreference getWaterPlantPreference(this ThingDef plantDef)
-    {
-        return plantDef.plant.getWaterPlantPreference();
-    }
+    public static WaterPlantPreference getWaterPlantPreference(this ThingDef plantDef) => 
+        plantDef.plant.getWaterPlantPreference();
 
     public static WaterPlantPreference getWaterPlantPreference(this PlantProperties plant)
     {
@@ -52,8 +50,6 @@ public static class PanaquaticUtility
         return WaterPlantPreference.None;
     }
     
-    public static bool SettableEntirelySaltwater(this IPlantToGrowSettable s)
-    {
-        return s.Cells.All(cell => cell.GetWaterBodyType(s.Map) != WaterBodyType.Freshwater);
-    }
+    public static bool SettableEntirelySaltwater(this IPlantToGrowSettable s) => 
+        s.Cells.All(cell => cell.GetWaterBodyType(s.Map) != WaterBodyType.Freshwater);
 }

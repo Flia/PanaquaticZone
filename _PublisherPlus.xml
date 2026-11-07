@@ -3,10 +3,8 @@
   <Excluded>
     <exclude>.git</exclude>
     <exclude>.idea</exclude>
-    <exclude>LICENSE</exclude>
     <exclude>Other assets</exclude>
-    <exclude>PanaquaticZone.sln</exclude>
     <exclude>README.md</exclude>
-    <exclude>Source</exclude>
+    <exclude>Source\obj</exclude>
   </Excluded>
 </Configuration>

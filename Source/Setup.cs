@@ -4,7 +4,6 @@ using Verse;
 
 namespace PanaquaticZone;
 
-[StaticConstructorOnStartup]
 public static class Setup
 {
     public static readonly bool allowFreshwaterForZone;
@@ -16,8 +15,10 @@ public static class Setup
 
     static Setup()
     {
-        List<TerrainDef> allWaterTiles = DefDatabase<TerrainDef>.AllDefs.Where(def => def.IsWater && def.passability != Traversability.Impassable).ToList();
-        List<ThingDef> allPlantDefsWithExtension = DefDatabase<ThingDef>.AllDefs.Where(def => def.HasModExtension<ModExtension_PlantSalinityPreference>()).ToList();
+        List<TerrainDef> allWaterTiles =
+            [.. DefDatabase<TerrainDef>.AllDefs.Where(def => def.IsWater && def.passability != Traversability.Impassable)];
+        List<ThingDef> allPlantDefsWithExtension =
+            [.. DefDatabase<ThingDef>.AllDefs.Where(def => def.HasModExtension<ModExtension_PlantSalinityPreference>())];
         TagTerrain(DefDatabase<TerrainDef>.AllDefsListForReading);
         TagPlants(allPlantDefsWithExtension);
         freshwaterTilesStatDisplayCache = CacheWaterTerrainForStatDisplay(allWaterTiles, WaterBodyType.Freshwater);

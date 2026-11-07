@@ -26,7 +26,7 @@ public class HarmonyPatchCompat_NicePlantsMenu
         if (s is Zone_Panaquatic panaquatic)
         {
             __result = PollutionUtility.CanPlantAt(plantDef, panaquatic) && 
-                       PanaquaticUtility.CanPlantAt(plantDef, panaquatic) &&
+                       Utility.CanPlantAt(plantDef, panaquatic) &&
                        plantDef.plant.sowTags.Contains("Panaquatic_Zone");
         }
     }

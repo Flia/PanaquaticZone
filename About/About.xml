@@ -4,6 +4,7 @@
     <author>royallyTipsy</author>
     <supportedVersions>
         <li>1.6</li>
+        <li>1.7</li>
     </supportedVersions>
     <packageId>royallyTipsy.PanaquaticZone</packageId>
     <url>https://github.com/Flia/PanaquaticZone</url>
@@ -19,7 +20,7 @@
     <loadAfter>
         <li>Ludeon.RimWorld</li>
         
-        <!-- add gizmos with an XML patch which I then remove with my own XML patch -->
+        <!-- those add gizmos with XML patches which I then remove with my own XML patches -->
         <li>VanillaExpanded.VPlantsEMore</li>
         <li>LimeTreeSnake.Biosphere</li>
         <li>VanillaExpanded.VCookESushi</li>

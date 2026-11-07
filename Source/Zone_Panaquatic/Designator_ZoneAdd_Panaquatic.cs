@@ -37,7 +37,7 @@ public class Designator_ZoneAdd_Panaquatic : Designator_ZoneAdd
         base.DesignateMultiCell(cells);
         if (Find.Selector.SelectedZone is Zone_Panaquatic zone)
         {
-            PanaquaticUtility.WarnIfPreferenceMismatch(zone.GetPlantDefToGrow(), zone);
+            Utility.WarnIfPreferenceMismatch(zone.GetPlantDefToGrow(), zone);
         }
     }
 }
